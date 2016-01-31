@@ -4,18 +4,16 @@
     <string name="app_name">¿Cuánto te mide?</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_info">Información</string>
- 	<string name="bienvenida">¿Cuánto te mide&#8230;</string>
- 	<string name="bienvenida_sub">&#8230;la zanahoria?</string>
- 	<string name="bienvenida_texto"><br>¡Bienvenido!</br>\n\n¿Estás preparado para averiguar el tamaño de tu zanahoria?\n\n¡Selecciona país y que comience el test!</string>
- 	<string name="comenzar">¡Comenzar!</string>
- 	<string name="siguiente">Siguiente &#8212;></string>
- 	<string name="inicio">Inicio</string>
- 	<string name="primera_ask">¿Cuántos años tienes?</string>
- 	<string name="primera1">Menos de 18</string>
- 	<string name="primera2">Entre 18 y 40</string>
- 	<string name="primera3">Más de 40</string>
- 	<string name="solucion_texto"></string>
- 	<string name="bienvenida_texto_land"><br>¡Bienvenido!</br>\n\n¡Selecciona país y que comience el test!</string>
- 	
- 	
+    <string name="bienvenida">¿Cuánto te mide&#8230;</string>
+    <string name="bienvenida_sub">&#8230;la zanahoria?</string>
+    <string name="bienvenida_texto"><br>¡Bienvenido!</br>\n\n¿Estás preparado para averiguar el tamaño de tu zanahoria?\n\n¡Selecciona país y que comience el test!</string>
+    <string name="comenzar">¡Comenzar!</string>
+    <string name="siguiente">Siguiente &#8212;></string>
+    <string name="inicio">Inicio</string>
+    <string name="primera_ask">¿Cuántos años tienes?</string>
+    <string name="primera1">Menos de 18</string>
+    <string name="primera2">Entre 18 y 40</string>
+    <string name="primera3">Más de 40</string>
+    <string name="solucion_texto">Solución</string>
+    <string name="bienvenida_texto_land"><br>¡Bienvenido!</br>\n\n¡Selecciona país y que comience el test!</string>
 </resources>

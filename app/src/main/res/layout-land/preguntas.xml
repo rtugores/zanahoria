@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_naranja"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/Bienvenida"
@@ -19,7 +17,7 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold" />
-  
+
     <TextView
         android:id="@+id/Bienvenida_sub"
         android:layout_width="match_parent"
@@ -31,9 +29,9 @@
         android:text="@string/bienvenida_sub"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
-      
+
     <TextView
-        android:id="@+id/primera_ask"
+        android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -48,23 +46,26 @@
     <RadioGroup
         android:id="@+id/radioGroup1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"     
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
-        android:layout_weight="1">        
+        android:layout_weight="1">
+
         <RadioButton
-            android:id="@+id/radio0"
+            android:id="@+id/first_option"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/primera1" />
+
         <RadioButton
-            android:id="@+id/radio1"
+            android:id="@+id/second_option"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/primera2" />
+
         <RadioButton
-            android:id="@+id/radio2"
+            android:id="@+id/third_option"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/primera3" />
@@ -78,10 +79,10 @@
         android:layout_marginRight="20dip"
         android:layout_marginTop="5dip"
         android:background="#FF8000"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button_ini"
+            android:id="@+id/home_button"
             android:layout_width="120dip"
             android:layout_height="40dp"
             android:background="#FFFFFF"
@@ -89,14 +90,12 @@
             android:text="@string/inicio" />
 
         <Button
-            android:id="@+id/button_sig"
+            android:id="@+id/next_button"
             android:layout_width="120dip"
             android:layout_height="40dp"
             android:layout_marginLeft="240dip"
-            android:gravity="center"
             android:background="#FFFFFF"
+            android:gravity="center"
             android:text="@string/siguiente" />
-
     </LinearLayout>
-
 </LinearLayout>
