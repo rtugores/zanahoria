@@ -1,5 +1,8 @@
 package huitca1212.cuantotemide;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -41,5 +44,16 @@ public class Utils {
 			}
 		});
 		builder.create().show();
+	}
+
+	public static void setAnalytics(Context ctx) {
+		if (BuildConfig.BUILD_TYPE.equals("release")) {
+			GoogleAnalytics analytics = GoogleAnalytics.getInstance(ctx);
+			analytics.setLocalDispatchPeriod(1800);
+			Tracker tracker = analytics.newTracker("UA-42496077-2");
+			tracker.enableExceptionReporting(true);
+			tracker.enableAdvertisingIdCollection(true);
+			tracker.enableAutoActivityTracking(true);
+		}
 	}
 }

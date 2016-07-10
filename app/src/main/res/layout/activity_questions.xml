@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF8000"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/default_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <RadioGroup
+        android:id="@+id/questions_chooser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp">
+
+        <RadioButton
+            android:id="@+id/first_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:padding="5dp"
+            android:text="@string/first_option" />
+
+        <RadioButton
+            android:id="@+id/second_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/second_option" />
+
+        <RadioButton
+            android:id="@+id/third_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/third_option" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/questions_chooser"
+        android:layout_gravity="center"
+        android:layout_marginBottom="51dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:gravity="center"
+        android:text="@string/first_question"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="17dp"
+        android:background="#FF8000"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="@string/inicio" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="35dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="@string/siguiente" />
+    </LinearLayout>
+</RelativeLayout>
