@@ -63,122 +63,57 @@ public class QuestionsActivity extends OptionsActivity implements View.OnClickLi
 
 	private void onNextButtonClicked() {
 		size = checkSizeByCountry();
+		switch (currentStatus) {
+			case 0:
+				updateScreen(-0.5f, 0.4f, 0f,
+						"¿Cuánto mides?", "Menos de 1,70 m", "Entre 1,70 y 1,80 m", "Más de 1,80 m");
+				break;
+			case 1:
+				updateScreen(-0.4f, 0, 0.4f,
+						"¿De qué color tienes la piel?", "Blanca o casi blanca", "Negra o casi negra", "Entre blanca y negra");
+				break;
+			case 2:
+				updateScreen(-0.1f, 2, 0.6f,
+						"¿Qué relación tienes entre los dedos índice y anular?", "Es más largo el índice", "Es más largo el anular", "Son igual de largos");
+				break;
+			case 3:
+				updateScreen(-0.2f, -0.2f, 0.4f,
+						"¿Comes habitualmente nueces o arándanos?", "Sí", "No", "A veces");
+				break;
+			case 4:
+				updateScreen(0.4f, -0.3f, 0.1f,
+						"¿Eres fumador?", "Sí", "No", "Sólo de vez en cuando");
+				break;
+			case 5:
+				updateScreen(-0.5f, 0f, -0.2f,
+						"¿Cuántas veces a la semana haces ejercicio?", "Una vez o más", "Sólo hago ejercicio cuando me apetece", "No hago ejercicio");
+				break;
+			case 6:
+				updateScreen(0.5f, 0.1f, -0.3f,
+						"", "", "", "");
+				SolutionActivity.startActivity(QuestionsActivity.this, Double.toString(size));
+				finish();
+				break;
+		}
+	}
+
+	private void updateScreen(float firstOptionVar, float secondOptionVar, float thirdPositionVar,
+			String questionText, String firstOptionText, String secondOptionText, String thirdOptionText) {
 		if (firstOption.isChecked()) {
-			size -= 0.5; //respuestas a edad
+			size += firstOptionVar;
+		} else if (secondOption.isChecked()) {
+			size += secondOptionVar;
+		} else if (thirdOption.isChecked()) {
+			size += thirdPositionVar;
 		}
-		if (secondOption.isChecked()) {
-			size += 0.4;
+		if (currentStatus != 6) {
+			firstOption.setChecked(true);
+			question.setText(questionText);
+			firstOption.setText(firstOptionText);
+			secondOption.setText(secondOptionText);
+			thirdOption.setText(thirdOptionText);
 		}
-		if (thirdOption.isChecked()) {
-			size += 0;
-		}
-		firstOption.setChecked(true);
-		question.setText("¿Cuánto mides?");
-		firstOption.setText("Menos de 1,70 m");
-		secondOption.setText("Entre 1,70 y 1,80 m");
-		thirdOption.setText("Más de 1,80 m");
-		nextButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				if (firstOption.isChecked()) {
-					size -= 0.4; //respuestas a estatura
-				}
-				if (thirdOption.isChecked()) {
-					size += 0.4;
-				}
-				firstOption.setChecked(true);
-				question.setText("¿De qué color tienes la piel?");
-				firstOption.setText("Blanca o casi blanca");
-				secondOption.setText("Negra o casi negra");
-				thirdOption.setText("Entre blanca y negra");
-				nextButton.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
-						if (firstOption.isChecked()) {
-							size -= 0.1; //respuestas a color piel
-						}
-						if (secondOption.isChecked()) {
-							size += 2;
-						}
-						if (thirdOption.isChecked()) {
-							size += 0.6;
-						}
-						firstOption.setChecked(true);
-						question.setText("¿Qué relación tienes entre los dedos índice y anular?");
-						firstOption.setText("Es más largo el índice");
-						secondOption.setText("Es más largo el anular");
-						thirdOption.setText("Son igual de largos");
-						nextButton.setOnClickListener(new View.OnClickListener() {
-							public void onClick(View v) {
-								if (firstOption.isChecked()) {
-									size -= 0.2; //respuestas a dedos
-								}
-								if (secondOption.isChecked()) {
-									size -= 0.2;
-								}
-								if (thirdOption.isChecked()) {
-									size += 0.4;
-								}
-								firstOption.setChecked(true);
-								question.setText("¿Comes habitualmente nueces o arándanos?");
-								firstOption.setText("Sí");
-								secondOption.setText("No");
-								thirdOption.setText("A veces");
-								nextButton.setOnClickListener(new View.OnClickListener() {
-									public void onClick(View v) {
-										if (firstOption.isChecked()) {
-											size += 0.4; //respuestas a comida
-										}
-										if (secondOption.isChecked()) {
-											size -= 0.3;
-										}
-										if (thirdOption.isChecked()) {
-											size += 0.1;
-										}
-										firstOption.setChecked(true);
-										question.setText("¿Eres fumador?");
-										firstOption.setText("Sí");
-										secondOption.setText("No");
-										thirdOption.setText("Sólo de vez en cuando");
-										nextButton.setOnClickListener(new View.OnClickListener() {
-											public void onClick(View v) {
-												if (firstOption.isChecked()) {
-													size -= 0.5; //respuestas al fumar
-												}
-												if (secondOption.isChecked()) {
-													;
-												}
-												if (thirdOption.isChecked()) {
-													size -= 0.2;
-												}
-												firstOption.setChecked(true);
-												question.setText("¿Cuántas veces a la semana haces ejercicio?");
-												firstOption.setText("Una vez o más");
-												secondOption.setText("Sólo hago ejercicio cuando me apetece");
-												thirdOption.setText("No hago ejercicio");
-												nextButton.setOnClickListener(new View.OnClickListener() {
-													public void onClick(View v) {
-														if (firstOption.isChecked()) {
-															size += 0.5; //respuestas a ejercicio
-														}
-														if (secondOption.isChecked()) {
-															size += 0.1;
-														}
-														if (thirdOption.isChecked()) {
-															size -= 0.3;
-														}
-														SolutionActivity.startActivity(QuestionsActivity.this, Double.toString(size));
-														finish();
-													}
-												});
-											}
-										});
-									}
-								});
-							}
-						});
-					}
-				});
-			}
-		});
+		currentStatus++;
 	}
 
 	public float checkSizeByCountry() {
