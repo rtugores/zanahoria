@@ -7,6 +7,6 @@ This repository contains the source code of the "How big is your carrot?" app av
 <img alt="Get it on Google Play" src="http://steverichey.github.io/google-play-badge-svg/img/en_get.svg" width="50%"/>
 </a>
 
-The "How big is your carrot?" project was started in 2013 by Rodrigo Tugores (emiajtu@gmail.com)
+The "How big is your carrot?" project was started in 2013 by Rodrigo Tugores (huitca1212@gmail.com)
 
 "How big is your carrot?" is released under the GNU General Public License (GPL) Version 2. See LICENSE file in the root of the package for more details.
