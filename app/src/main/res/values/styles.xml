@@ -1,20 +1,34 @@
 <resources>
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="TextDarkGrey12">
+        <item name="android:textSize">@dimen/standard12sp</item>
+        <item name="android:textColor">@color/darkGrey</item>
     </style>
 
+    <style name="TextDarkGrey14">
+        <item name="android:textSize">@dimen/standard14sp</item>
+        <item name="android:textColor">@color/darkGrey</item>
+    </style>
+
+    <style name="TextDarkGrey16">
+        <item name="android:textSize">@dimen/standard16sp</item>
+        <item name="android:textColor">@color/darkGrey</item>
+    </style>
+
+    <style name="TextDarkGrey20">
+        <item name="android:textSize">@dimen/standard20sp</item>
+        <item name="android:textColor">@color/darkGrey</item>
+    </style>
+
+    <style name="TextDarkGrey50">
+        <item name="android:textSize">@dimen/standard50sp</item>
+        <item name="android:textColor">@color/darkGrey</item>
+    </style>
 </resources>

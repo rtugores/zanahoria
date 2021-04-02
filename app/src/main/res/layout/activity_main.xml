@@ -11,33 +11,33 @@
         android:layout_height="56dp" />
 
     <TextView
-        android:id="@+id/Bienvenida_texto"
+        android:id="@+id/welcomeTextView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center|center_vertical"
-        android:paddingLeft="17dp"
-        android:paddingRight="17dp"
+        android:paddingEnd="@dimen/side_margin"
+        android:paddingStart="@dimen/side_margin"
         android:text="@string/bienvenida_texto"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <Spinner
-        android:id="@+id/country_spinner"
+        android:id="@+id/countrySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="17dp" />
+        android:layout_marginBottom="@dimen/side_margin"
+        android:layout_marginStart="@dimen/side_margin"
+        android:layout_marginEnd="@dimen/side_margin" />
 
     <Button
-        android:id="@+id/start_button"
+        android:id="@+id/startButton"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginBottom="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="17dp"
+        android:layout_marginBottom="@dimen/side_margin"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginRight="@dimen/side_margin"
         android:background="#FFFFFF"
         android:text="@string/comenzar" />
 

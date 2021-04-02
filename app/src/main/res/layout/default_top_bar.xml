@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:background="#298A08"
     android:layout_weight="2"
     android:orientation="vertical">
 
@@ -10,11 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="#298A08"
         android:gravity="center"
         android:text="@string/bienvenida"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="@dimen/standard20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -22,9 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="#298A08"
         android:gravity="center"
         android:text="@string/bienvenida_sub"
         android:textColor="#FFFFFF"
-        android:textSize="15sp" />
+        android:textSize="@dimen/standard16sp" />
 </LinearLayout>
