@@ -13,6 +13,7 @@ class SplashActivity : Activity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
         val splashTread: Thread = object : Thread() {
             override fun run() {
                 try {
@@ -26,8 +27,7 @@ class SplashActivity : Activity() {
                 } catch (e: InterruptedException) {
                     // do nothing
                 } finally {
-                    finish()
-                    startActivity(Intent(this@SplashActivity, MainActivity::class.java)) //pantalla de inicio
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                     finish()
                 }
             }

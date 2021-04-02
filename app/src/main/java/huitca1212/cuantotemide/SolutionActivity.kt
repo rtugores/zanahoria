@@ -10,7 +10,7 @@ import huitca1212.cuantotemide.MainActivity.Companion.startActivity
 import huitca1212.cuantotemide.databinding.ActivitySolutionBinding
 import java.util.Locale
 
-class SolutionActivity : OptionsActivity(), View.OnClickListener {
+class SolutionActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivitySolutionBinding
     private var sizeShare: Float? = null
@@ -19,6 +19,7 @@ class SolutionActivity : OptionsActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solution)
         binding = ActivitySolutionBinding.bind(findViewById(R.id.solutionMainContainer))
+        setSupportActionBar(binding.appTopBarLayout.appTopBar)
 
         binding.homeButton.setOnClickListener(this)
         binding.shareButton.setOnClickListener(this)

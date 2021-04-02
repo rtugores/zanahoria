@@ -1,13 +1,28 @@
 package huitca1212.cuantotemide
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 
-object Utils {
+open class BaseActivity : AppCompatActivity() {
 
-    fun share(context: Context) {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_share -> share()
+            R.id.menu_info -> showInfoAppDialog()
+        }
+        return true
+    }
+
+    private fun share() {
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
@@ -23,11 +38,11 @@ object Utils {
             )
         }
 
-        context.startActivity(Intent.createChooser(intent, "Compartir mediante"))
+        startActivity(Intent.createChooser(intent, "Compartir mediante"))
     }
 
-    fun showInfoAppDialog(context: Context) {
-        val dialog = AlertDialog.Builder(context).apply {
+    private fun showInfoAppDialog() {
+        val dialog = AlertDialog.Builder(this).apply {
             setTitle("Información")
             setMessage(
                 "Aplicación desarrollada por RJ Apps. " +

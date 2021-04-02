@@ -8,7 +8,7 @@ import huitca1212.cuantotemide.MainActivity.Companion.startActivity
 import huitca1212.cuantotemide.databinding.ActivityQuestionsBinding
 import java.util.Locale
 
-class QuestionsActivity : OptionsActivity(), View.OnClickListener {
+class QuestionsActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityQuestionsBinding
     private var size = 0f
@@ -18,6 +18,7 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
         binding = ActivityQuestionsBinding.bind(findViewById(R.id.questionsMainContainer))
+        setSupportActionBar(binding.appTopBarLayout.appTopBar)
 
         binding.homeButton.setOnClickListener(this)
         binding.nextButton.setOnClickListener(this)

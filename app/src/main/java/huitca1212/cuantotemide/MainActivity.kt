@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import huitca1212.cuantotemide.databinding.ActivityMainBinding
 
-class MainActivity : OptionsActivity(), View.OnClickListener {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
     private val countriesList = listOf(
@@ -53,6 +53,7 @@ class MainActivity : OptionsActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.bind(findViewById(R.id.homeMainContainer))
+        setSupportActionBar(binding.appTopBarLayout.appTopBar)
 
         binding.startButton.setOnClickListener(this)
         setCountrySpinner()
