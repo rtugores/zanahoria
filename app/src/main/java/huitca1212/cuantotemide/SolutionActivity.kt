@@ -6,51 +6,43 @@ import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import huitca1212.cuantotemide.MainActivity.Companion.startActivity
+import huitca1212.cuantotemide.databinding.ActivitySolutionBinding
 import java.util.Locale
 
 class SolutionActivity : OptionsActivity(), View.OnClickListener {
 
-    private var image: ImageView? = null
-    private var sizeText: TextView? = null
-    private var solutionText: TextView? = null
-    private var homeButton: Button? = null
-    private var shareButton: Button? = null
-
-    private var sizeShare = 0f
+    private lateinit var binding: ActivitySolutionBinding
+    private var sizeShare: Float? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solution)
-        image = findViewById<View>(R.id.final_photo) as ImageView
-        sizeText = findViewById<View>(R.id.size_text) as TextView
-        solutionText = findViewById<View>(R.id.solution_text) as TextView
-        homeButton = findViewById<View>(R.id.home_button) as Button
-        shareButton = findViewById<View>(R.id.share_button) as Button
-        homeButton!!.setOnClickListener(this)
-        shareButton!!.setOnClickListener(this)
-        sizeShare = intent.extras!!.getString(FINAL_SIZE_ARG)!!.toFloat()
-        sizeText!!.text = String.format(getString(R.string.solution_size_text), sizeShare)
-        if (sizeShare >= 13.79) {
-            setSolutionParameters(R.drawable.solution_bigger, R.string.solution_bigger_text, R.raw.applause)
-        } else {
-            setSolutionParameters(R.drawable.solution_smaller, R.string.solution_smaller_text, R.raw.boo)
+        binding = ActivitySolutionBinding.bind(findViewById(R.id.solutionMainContainer))
+
+        binding.homeButton.setOnClickListener(this)
+        binding.shareButton.setOnClickListener(this)
+        sizeShare = intent.extras?.getString(FINAL_SIZE_ARG)?.toFloat()
+        sizeShare?.let {
+            binding.sizeText.text = String.format(getString(R.string.solution_size_text), it)
+            if (it >= 13.79) {
+                setSolutionParameters(R.drawable.solution_bigger, R.string.solution_bigger_text, R.raw.applause)
+            } else {
+                setSolutionParameters(R.drawable.solution_smaller, R.string.solution_smaller_text, R.raw.boo)
+            }
         }
     }
 
     private fun setSolutionParameters(solutionDrawableId: Int, solutionTextId: Int, solutionRawId: Int) {
-        image!!.setImageResource(solutionDrawableId)
-        solutionText!!.setText(solutionTextId)
+        binding.finalPhoto.setImageResource(solutionDrawableId)
+        binding.solutionText.setText(solutionTextId)
         val mpRes: MediaPlayer = MediaPlayer.create(applicationContext, solutionRawId)
         mpRes.start()
     }
 
     override fun onClick(v: View) {
         val id = v.id
-        if (id == R.id.home_button) {
+        if (id == R.id.homeButton) {
             onHomeButtonClicked()
         } else if (id == R.id.share_button) {
             onShareButtonClicked()

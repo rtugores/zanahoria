@@ -4,42 +4,30 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.RadioButton
-import android.widget.TextView
 import huitca1212.cuantotemide.MainActivity.Companion.startActivity
-import huitca1212.cuantotemide.QuestionsActivity
+import huitca1212.cuantotemide.databinding.ActivityQuestionsBinding
 import java.util.Locale
 
 class QuestionsActivity : OptionsActivity(), View.OnClickListener {
 
-    private var nextButton: Button? = null
-    private var homeButton: Button? = null
-    private var question: TextView? = null
-    private var firstOption: RadioButton? = null
-    private var secondOption: RadioButton? = null
-    private var thirdOption: RadioButton? = null
+    private lateinit var binding: ActivityQuestionsBinding
     private var size = 0f
     private var currentStatus = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
-        nextButton = findViewById(R.id.next_button)
-        homeButton = findViewById(R.id.home_button)
-        question = findViewById(R.id.question)
-        firstOption = findViewById(R.id.first_option)
-        secondOption = findViewById(R.id.second_option)
-        thirdOption = findViewById(R.id.third_option)
-        homeButton?.setOnClickListener(this)
-        nextButton?.setOnClickListener(this)
+        binding = ActivityQuestionsBinding.bind(findViewById(R.id.questionsMainContainer))
+
+        binding.homeButton.setOnClickListener(this)
+        binding.nextButton.setOnClickListener(this)
     }
 
-    override fun onClick(v: View) {
-        val id = v.id
-        if (id == R.id.home_button) {
+    override fun onClick(view: View) {
+        val id = view.id
+        if (id == R.id.homeButton) {
             onHomeButtonClicked()
-        } else if (id == R.id.next_button) {
+        } else if (id == R.id.nextButton) {
             onNextButtonClicked()
         }
     }
@@ -107,38 +95,40 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
         secondOptionText: String,
         thirdOptionText: String
     ) {
-        when {
-            firstOption!!.isChecked -> size += firstOptionVar
-            secondOption!!.isChecked -> size += secondOptionVar
-            thirdOption!!.isChecked -> size += thirdPositionVar
+        with(binding) {
+            when {
+                firstOption.isChecked -> size += firstOptionVar
+                secondOption.isChecked -> size += secondOptionVar
+                thirdOption.isChecked -> size += thirdPositionVar
+            }
+            if (currentStatus != 6) {
+                firstOption.isChecked = true
+                questionTextView.text = questionText
+                firstOption.text = firstOptionText
+                secondOption.text = secondOptionText
+                thirdOption.text = thirdOptionText
+            }
+            currentStatus++
         }
-        if (currentStatus != 6) {
-            firstOption!!.isChecked = true
-            question!!.text = questionText
-            firstOption!!.text = firstOptionText
-            secondOption!!.text = secondOptionText
-            thirdOption!!.text = thirdOptionText
-        }
-        currentStatus++
     }
 
     private fun checkSizeByCountry(): Float {
-        val country = intent.extras!!.getString(COUNTRY_SELECTED_ARG)
-        return country?.toLowerCase(Locale.getDefault())?.let {
-            if (country.contains("argentina") ||
-                country.contains("andorra") ||
-                country.contains("esp") ||
-                country.contains("chile") ||
-                country.contains("canadá") ||
-                country.contains("belice")) {
+        val country = intent.extras?.getString(COUNTRY_SELECTED_ARG)
+        return country?.toLowerCase(Locale.getDefault())?.run {
+            if (contains("argentina") ||
+                contains("andorra") ||
+                contains("esp") ||
+                contains("chile") ||
+                contains("canadá") ||
+                contains("belice")) {
                 14.18f
-            } else if (country.contains("estados unidos")) {
+            } else if (contains("estados unidos")) {
                 12f
-            } else if (country.contains("bolivia") ||
-                country.contains("colombia") ||
-                country.contains("venezuela") ||
-                country.contains("ecuador") ||
-                country.contains("guinea ecuatorial")) {
+            } else if (contains("bolivia") ||
+                contains("colombia") ||
+                contains("venezuela") ||
+                contains("ecuador") ||
+                contains("guinea ecuatorial")) {
                 17.09f
             } else {
                 15.49f
@@ -152,9 +142,11 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
 
         fun startActivity(activity: Activity, countrySelected: String?) {
             val intent = Intent(activity, QuestionsActivity::class.java)
-            val b = Bundle()
-            b.putString(COUNTRY_SELECTED_ARG, countrySelected)
-            intent.putExtras(b)
+            val bundle = Bundle().apply{
+                putString(COUNTRY_SELECTED_ARG, countrySelected)
+            }
+            intent.putExtras(bundle)
+
             activity.startActivity(intent)
         }
     }

@@ -7,16 +7,14 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
 import android.widget.SpinnerAdapter
 import android.widget.Toast
+import huitca1212.cuantotemide.databinding.ActivityMainBinding
 
 class MainActivity : OptionsActivity(), View.OnClickListener {
 
-    private var countrySpinner: Spinner? = null
-    private var startButton: Button? = null
-    private val dataArray = arrayOf(
+    private lateinit var binding: ActivityMainBinding
+    private val dataList = listOf(
         "Selecciona país...",
         "Andorra",
         "Argentina",
@@ -50,23 +48,22 @@ class MainActivity : OptionsActivity(), View.OnClickListener {
         "Uruguay",
         "Venezuela"
     )
-    private var countrySelected = dataArray[0]
+    private var countrySelected = dataList[0]
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        countrySpinner = findViewById(R.id.countrySpinner)
-        startButton = findViewById(R.id.startButton)
-        startButton!!.setOnClickListener(this)
+        binding = ActivityMainBinding.bind(findViewById(R.id.homeMainContainer))
+        binding.startButton.setOnClickListener(this)
         setCountrySpinner()
     }
 
     private fun setCountrySpinner() {
-        val adapter: SpinnerAdapter = ArrayAdapter<Any?>(this, android.R.layout.simple_spinner_dropdown_item, dataArray)
-        countrySpinner!!.adapter = adapter
-        countrySpinner!!.onItemSelectedListener = object : OnItemSelectedListener {
+        val adapter: SpinnerAdapter = ArrayAdapter<Any?>(this, android.R.layout.simple_spinner_dropdown_item, dataList)
+        binding.countrySpinner.adapter = adapter
+        binding.countrySpinner.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>?, view: View, i: Int, l: Long) {
-                countrySelected = dataArray[i]
+                countrySelected = dataList[i]
             }
 
             override fun onNothingSelected(arg0: AdapterView<*>?) {}
@@ -81,7 +78,7 @@ class MainActivity : OptionsActivity(), View.OnClickListener {
     }
 
     private fun onStartButtonClicked() {
-        if (countrySelected == dataArray[0]) {
+        if (countrySelected == dataList[0]) {
             Toast.makeText(this, "¡Selecciona país!", Toast.LENGTH_SHORT).show()
         } else {
             QuestionsActivity.startActivity(this@MainActivity, countrySelected)

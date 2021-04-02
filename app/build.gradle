@@ -11,6 +11,9 @@ android {
         versionCode 5
         versionName "2.0"
     }
+    buildFeatures {
+        viewBinding = true
+    }
     signingConfigs {
         release {
             keyAlias 'cuantotemide'
