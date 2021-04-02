@@ -10,10 +10,15 @@
     <string name="comenzar">¡Comenzar!</string>
     <string name="siguiente">Siguiente &#8212;></string>
     <string name="inicio">Inicio</string>
-    <string name="primera_ask">¿Cuántos años tienes?</string>
-    <string name="primera1">Menos de 18</string>
-    <string name="primera2">Entre 18 y 40</string>
-    <string name="primera3">Más de 40</string>
-    <string name="solucion_texto">Solución</string>
-    <string name="bienvenida_texto_land"><br>¡Bienvenido!</br>\n\n¡Selecciona país y que comience el test!</string>
+    <string name="first_question">¿Cuántos años tienes?</string>
+    <string name="first_option">Menos de 18</string>
+    <string name="second_option">Entre 18 y 40</string>
+    <string name="third_option">Más de 40</string>
+
+    <string name="solution_size_text">"%.2f cm</string>
+    <string name="solution_smaller_text">La media de una zanahoria en el mundo es de 13,79 cm.\n\nLa tienes más pequeña, pero no te preocupes.\n\n¡No es importante!</string>
+    <string name="solution_bigger_text">La media de una zanahoria en el mundo es de 13,79 cm.\n\n¡La tienes más grande!\n\n¿Sabes ya si es más grande que la de tus amigos?</string>
+    <string name="share_subject">¡Mira cuánto me mide!</string>
+    <string name="share_text">La aplicación \"¿Cuánto te mide?\" dice que mi zanahoria mide %.2f cm. ¿A ti cuánto te da?: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
+    <string name="share_chooser">Compartir mediante</string>
 </resources>
