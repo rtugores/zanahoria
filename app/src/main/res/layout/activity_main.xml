@@ -20,7 +20,7 @@
         android:gravity="center|center_vertical"
         android:paddingEnd="@dimen/side_margin"
         android:paddingStart="@dimen/side_margin"
-        android:text="@string/bienvenida_texto"
+        android:text="@string/welcome_text"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
@@ -40,6 +40,6 @@
         android:layout_marginLeft="@dimen/side_margin"
         android:layout_marginRight="@dimen/side_margin"
         android:background="#FFFFFF"
-        android:text="@string/comenzar" />
+        android:text="@string/start" />
 
 </LinearLayout>

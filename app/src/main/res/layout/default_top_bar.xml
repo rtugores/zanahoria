@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/bienvenida"
+        android:text="@string/welcome_headline"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/standard20sp"
         android:textStyle="bold" />
@@ -24,7 +24,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/bienvenida_sub"
+        android:text="@string/welcome_subline"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/standard16sp" />
 </LinearLayout>

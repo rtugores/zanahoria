@@ -72,7 +72,7 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:text="@string/inicio" />
+            android:text="@string/go_to_start" />
 
         <Button
             android:id="@+id/nextButton"
@@ -81,6 +81,6 @@
             android:layout_marginStart="35dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:text="@string/siguiente" />
+            android:text="@string/next" />
     </LinearLayout>
 </RelativeLayout>

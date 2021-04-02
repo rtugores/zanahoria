@@ -12,7 +12,7 @@
         android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/bienvenida"
+        android:text="@string/welcome_headline"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -32,7 +32,7 @@
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/bienvenida_sub"
+        android:text="@string/welcome_subline"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />

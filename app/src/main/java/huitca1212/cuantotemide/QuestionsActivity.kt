@@ -24,11 +24,9 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        val id = view.id
-        if (id == R.id.homeButton) {
-            onHomeButtonClicked()
-        } else if (id == R.id.nextButton) {
-            onNextButtonClicked()
+        when (view.id) {
+            R.id.homeButton -> onHomeButtonClicked()
+            R.id.nextButton -> onNextButtonClicked()
         }
     }
 
@@ -41,12 +39,22 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
         size = checkSizeByCountry()
         when (currentStatus) {
             0 -> updateScreen(
-                -0.5f, 0.4f, 0f,
-                "¿Cuánto mides?", "Menos de 1,70 m", "Entre 1,70 y 1,80 m", "Más de 1,80 m"
+                -0.5f,
+                0.4f,
+                0f,
+                "¿Cuánto mides?",
+                "Menos de 1,70 m",
+                "Entre 1,70 y 1,80 m",
+                "Más de 1,80 m"
             )
             1 -> updateScreen(
-                -0.4f, 0f, 0.4f,
-                "¿De qué color tienes la piel?", "Blanca o casi blanca", "Negra o casi negra", "Entre blanca y negra"
+                -0.4f,
+                0f,
+                0.4f,
+                "¿De qué color tienes la piel?",
+                "Blanca o casi blanca",
+                "Negra o casi negra",
+                "Entre blanca y negra"
             )
             2 -> updateScreen(
                 -0.1f,
@@ -58,12 +66,22 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
                 "Son igual de largos"
             )
             3 -> updateScreen(
-                -0.2f, -0.2f, 0.4f,
-                "¿Comes habitualmente nueces o arándanos?", "Sí", "No", "A veces"
+                -0.2f,
+                -0.2f,
+                0.4f,
+                "¿Comes habitualmente nueces o arándanos?",
+                "Sí",
+                "No",
+                "A veces"
             )
             4 -> updateScreen(
-                0.4f, -0.3f, 0.1f,
-                "¿Eres fumador?", "Sí", "No", "Sólo de vez en cuando"
+                0.4f,
+                -0.3f,
+                0.1f,
+                "¿Eres fumador?",
+                "Sí",
+                "No",
+                "Sólo de vez en cuando"
             )
             5 -> updateScreen(
                 -0.5f,
@@ -77,10 +95,15 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
 
             6 -> {
                 updateScreen(
-                    0.5f, 0.1f, -0.3f,
-                    "", "", "", ""
+                    0.5f,
+                    0.1f,
+                    -0.3f,
+                    "",
+                    "",
+                    "",
+                    ""
                 )
-                SolutionActivity.startActivity(this@QuestionsActivity, java.lang.Double.toString(size.toDouble()))
+                SolutionActivity.startActivity(this@QuestionsActivity, size.toString())
                 finish()
             }
         }
@@ -142,7 +165,7 @@ class QuestionsActivity : OptionsActivity(), View.OnClickListener {
 
         fun startActivity(activity: Activity, countrySelected: String?) {
             val intent = Intent(activity, QuestionsActivity::class.java)
-            val bundle = Bundle().apply{
+            val bundle = Bundle().apply {
                 putString(COUNTRY_SELECTED_ARG, countrySelected)
             }
             intent.putExtras(bundle)
