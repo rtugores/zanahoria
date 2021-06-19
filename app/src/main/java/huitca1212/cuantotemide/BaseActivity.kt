@@ -1,7 +1,6 @@
 package huitca1212.cuantotemide
 
 import android.content.Intent
-import android.os.Build
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
@@ -25,11 +24,7 @@ open class BaseActivity : AppCompatActivity() {
     private fun share() {
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
-            } else {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
-            }
+            addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             putExtra(Intent.EXTRA_SUBJECT, """¡Descarga "¿Cuánto te mide?"!""")
             putExtra(
                 Intent.EXTRA_TEXT,
