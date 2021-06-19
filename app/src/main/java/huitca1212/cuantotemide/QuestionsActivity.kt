@@ -138,13 +138,14 @@ class QuestionsActivity : BaseActivity(), View.OnClickListener {
 
     private fun checkSizeByCountry(): Float {
         val country = intent.extras?.getString(COUNTRY_SELECTED_ARG)
-        return country?.toLowerCase(Locale.getDefault())?.run {
+        return country?.lowercase(Locale.getDefault())?.run {
             if (contains("argentina") ||
                 contains("andorra") ||
                 contains("esp") ||
                 contains("chile") ||
                 contains("canadá") ||
-                contains("belice")) {
+                contains("belice")
+            ) {
                 14.18f
             } else if (contains("estados unidos")) {
                 12f
@@ -152,7 +153,8 @@ class QuestionsActivity : BaseActivity(), View.OnClickListener {
                 contains("colombia") ||
                 contains("venezuela") ||
                 contains("ecuador") ||
-                contains("guinea ecuatorial")) {
+                contains("guinea ecuatorial")
+            ) {
                 17.09f
             } else {
                 15.49f

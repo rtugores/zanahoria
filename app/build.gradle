@@ -2,11 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 30
+    compileSdk 30
     buildToolsVersion "30.0.3"
+
     defaultConfig {
         applicationId "huitca1212.cuantotemide"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 5
         versionName "2.0"
@@ -34,6 +35,13 @@ android {
             proguardFile '../proguard-project-release.txt'
             signingConfig signingConfigs.release
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 

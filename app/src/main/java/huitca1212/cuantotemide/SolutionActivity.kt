@@ -3,7 +3,6 @@ package huitca1212.cuantotemide
 import android.app.Activity
 import android.content.Intent
 import android.media.MediaPlayer
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import huitca1212.cuantotemide.MainActivity.Companion.startActivity
@@ -58,11 +57,7 @@ class SolutionActivity : BaseActivity(), View.OnClickListener {
     private fun onShareButtonClicked() {
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
-            } else {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
-            }
+            addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_subject))
             putExtra(Intent.EXTRA_TEXT, String.format(Locale.getDefault(), getString(R.string.share_text), sizeShare))
         }
