@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">¿Cuánto te mide?</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_info">Información</string>
     <string name="welcome_headline">¿Cuánto te mide&#8230;</string>
     <string name="welcome_subline">&#8230;la zanahoria?</string>
-    <string name="welcome_text"><br>¡Bienvenido!</br>\n\n¿Estás preparado para averiguar el tamaño de tu zanahoria?\n\n¡Selecciona país y que comience el test!</string>
+    <string name="welcome_text"><![CDATA[<b>¡Bienvenido!</b><br><br>Estás preparado para averiguar el tamaño de tu zanahoria?<br><br>¡Selecciona país y que comience el test!]]></string>
     <string name="start">¡Comenzar!</string>
     <string name="next">Siguiente &#8212;></string>
     <string name="go_to_start">Inicio</string>

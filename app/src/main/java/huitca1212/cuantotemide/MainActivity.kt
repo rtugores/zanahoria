@@ -2,15 +2,19 @@ package huitca1212.cuantotemide
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import huitca1212.cuantotemide.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity(), View.OnClickListener {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val countriesList = listOf(
@@ -55,14 +59,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding = ActivityMainBinding.bind(findViewById(R.id.homeMainContainer))
         setSupportActionBar(binding.appTopBarLayout.appTopBar)
 
-        binding.startButton.setOnClickListener(this)
+        binding.welcomeTextView.text = htmlToPlainString(getString(R.string.welcome_text))
+        binding.startButton.setOnClickListener { onStartButtonClicked() }
         setCountrySpinner()
-    }
-
-    override fun onClick(view: View) {
-        if (view.id == R.id.startButton) {
-            onStartButtonClicked()
-        }
     }
 
     private fun setCountrySpinner() {
@@ -83,6 +82,14 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         } else {
             QuestionsActivity.startActivity(this@MainActivity, countrySelected)
         }
+    }
+
+    private fun htmlToPlainString(source: String): String {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(source, Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            Html.fromHtml(source)
+        }.toString()
     }
 
     companion object {

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
+import com.google.android.gms.ads.MobileAds
 
 class SplashActivity : Activity() {
 
@@ -13,6 +14,8 @@ class SplashActivity : Activity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        MobileAds.initialize(this)
 
         val splashTread: Thread = object : Thread() {
             override fun run() {

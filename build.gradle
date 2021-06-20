@@ -22,6 +22,7 @@ allprojects {
 ext {
     material = '1.3.0'
     constraint_layout = '2.0.4'
+    ads = '20.2.0'
 }
 
 task clean(type: Delete) {

@@ -1,24 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/questionsMainContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF8000"
-    android:orientation="vertical">
+    android:background="@color/background_color">
 
     <include
         android:id="@+id/appTopBarLayout"
         layout="@layout/default_top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.2"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/side_margin"
+        android:layout_marginEnd="@dimen/side_margin"
+        android:text="@string/first_question"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/questionsChooser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appTopBarLayout" />
 
     <RadioGroup
         android:id="@+id/questionsChooser"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_marginEnd="@dimen/side_margin"
-        android:layout_marginStart="@dimen/side_margin">
+        android:layout_marginStart="@dimen/side_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appTopBarLayout"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/firstOption"
@@ -49,45 +73,38 @@
             android:text="@string/third_option" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/questionTextView"
-        android:layout_width="match_parent"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/homeButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_above="@id/questionsChooser"
-        android:layout_gravity="center"
-        android:layout_marginBottom="51dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="17dp"
-        android:gravity="center"
-        android:text="@string/first_question"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:layout_marginStart="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/side_margin"
+        android:text="@string/go_to_start"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintEnd_toStartOf="@id/nextButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="17dp"
-        android:background="#FF8000"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/side_margin"
+        android:text="@string/next"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/homeButton" />
 
-        <Button
-            android:id="@+id/homeButton"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:text="@string/go_to_start" />
-
-        <Button
-            android:id="@+id/nextButton"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="35dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:text="@string/next" />
-    </LinearLayout>
-</RelativeLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="@string/ads_banner_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

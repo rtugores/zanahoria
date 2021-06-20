@@ -14,5 +14,6 @@ local.properties
 # Android Studio captures folder
 captures/
 app/app.iml
+app/release/
 CuantoTeMide.iml
 key/

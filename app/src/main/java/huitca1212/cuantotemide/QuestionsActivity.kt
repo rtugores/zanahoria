@@ -4,6 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import huitca1212.cuantotemide.MainActivity.Companion.startActivity
 import huitca1212.cuantotemide.databinding.ActivityQuestionsBinding
 import java.util.Locale
@@ -20,8 +23,15 @@ class QuestionsActivity : BaseActivity(), View.OnClickListener {
         binding = ActivityQuestionsBinding.bind(findViewById(R.id.questionsMainContainer))
         setSupportActionBar(binding.appTopBarLayout.appTopBar)
 
+        loadAds()
+
         binding.homeButton.setOnClickListener(this)
         binding.nextButton.setOnClickListener(this)
+    }
+
+    private fun loadAds(){
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
     }
 
     override fun onClick(view: View) {

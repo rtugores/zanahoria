@@ -25,10 +25,12 @@ android {
     }
     buildTypes {
         debug {
+            resValue 'string', 'ads_banner_id', 'ca-app-pub-3940256099942544/6300978111'
             debuggable true
             minifyEnabled false
         }
         release {
+            resValue 'string', 'ads_banner_id', 'ca-app-pub-9645153779384738/6043080407'
             debuggable false
             shrinkResources true
             minifyEnabled true
@@ -50,4 +52,5 @@ dependencies {
 
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
     implementation "com.google.android.material:material:$material"
+    implementation "com.google.android.gms:play-services-ads:$ads"
 }

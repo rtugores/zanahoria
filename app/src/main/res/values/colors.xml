@@ -6,11 +6,13 @@
 
     <color name="ic_launcher_background">#CCEEFF</color>
 
+    <color name="background_color">#FF8000</color>
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="lightGrey">#878787</color>
     <color name="darkGrey">#404040</color>
     <color name="transparentBlack20p">#33000000</color>
+    <color name="transparentWhite20p">#33FFFFFF</color>
     <color name="blue">#3F51B5</color>
     <color name="darkBlue">#303F9F</color>
     <color name="red">#FF0000</color>

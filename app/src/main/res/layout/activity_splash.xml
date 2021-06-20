@@ -13,7 +13,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="@string/welcome_headline"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="@string/welcome_subline"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 
