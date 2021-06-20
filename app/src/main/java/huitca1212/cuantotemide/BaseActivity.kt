@@ -23,37 +23,34 @@ open class BaseActivity : AppCompatActivity() {
 
     private fun share() {
         val intent = Intent(Intent.ACTION_SEND).apply {
-            type = "text/plain"
+            type = SHARE_TYPE
             addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
-            putExtra(Intent.EXTRA_SUBJECT, """¡Descarga "¿Cuánto te mide?"!""")
-            putExtra(
-                Intent.EXTRA_TEXT,
-                "Descarga la aplicación que te servirá para saber si tu zanahoria es grande o pequeña. " +
-                    "Disponible YA en Google Play: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide"
-            )
+            putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_subject))
+            putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text))
         }
 
-        startActivity(Intent.createChooser(intent, "Compartir mediante"))
+        startActivity(Intent.createChooser(intent, getString(R.string.share_chooser)))
     }
 
     private fun showInfoAppDialog() {
-        val dialog = AlertDialog.Builder(this).apply {
-            setTitle("Información")
-            setMessage(
-                "Aplicación desarrollada por RJ Apps. " +
-                    "Para cualquier sugerencia, no dude en contactar."
-            )
-            setPositiveButton("Contactar") { _, _ ->
+        AlertDialog.Builder(this).apply {
+            setTitle(getString(R.string.info_dialog_title))
+            setMessage(getString(R.string.info_dialog_text))
+            setPositiveButton(R.string.info_dialog_positive_button) { _, _ ->
                 val intent = Intent(Intent.ACTION_SEND).apply {
-                    type = "message/rfc822"
-                    putExtra(Intent.EXTRA_EMAIL, arrayOf("huitca1212@gmail.com"))
+                    type = SHARE_MESSAGE_TYPE
+                    putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.app_contact_email)))
                 }
-                context.startActivity(Intent.createChooser(intent, "Enviar mediante"))
+                startActivity(Intent.createChooser(intent, getString(R.string.info_dialog_chooser)))
             }
-            setNegativeButton("Cancelar") { dialog, _ -> dialog.dismiss() }
+            setNegativeButton(getString(R.string.info_dialog_negative_button)) { dialog, _ -> dialog.dismiss() }
             create()
-        }
+        }.show()
+    }
 
-        dialog.show()
+    companion object {
+
+        internal const val SHARE_TYPE = "text/plain"
+        internal const val SHARE_MESSAGE_TYPE = "message/rfc822"
     }
 }

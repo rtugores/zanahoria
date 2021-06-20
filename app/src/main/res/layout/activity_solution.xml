@@ -10,7 +10,7 @@
     <include
         android:id="@+id/appTopBarLayout"
         layout="@layout/default_top_bar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,13 +18,13 @@
 
     <TextView
         android:id="@+id/size_text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="46sp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/finalPhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appTopBarLayout"
@@ -37,11 +37,9 @@
         android:contentDescription="@string/welcome_headline"
         android:src="@drawable/solution_bigger"
         android:layout_marginStart="@dimen/side_margin"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@id/homeButton"
-        app:layout_constraintEnd_toStartOf="@id/solutionText"
+        app:layout_constraintBottom_toBottomOf="@id/solutionText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/size_text" />
+        app:layout_constraintTop_toTopOf="@+id/solutionText" />
 
     <TextView
         android:id="@+id/solutionText"
@@ -49,13 +47,13 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:textColor="@color/white"
-        android:lineSpacingMultiplier="1.3"
+        android:lineSpacingMultiplier="1.2"
         android:textSize="20sp"
         android:layout_marginEnd="@dimen/side_margin"
-        app:layout_constraintBottom_toBottomOf="@id/finalPhoto"
+        app:layout_constraintBottom_toTopOf="@id/homeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/finalPhoto"
-        app:layout_constraintTop_toTopOf="@+id/finalPhoto"
+        app:layout_constraintTop_toBottomOf="@id/size_text"
         tools:text="@string/solution_smaller_text" />
 
     <com.google.android.material.button.MaterialButton

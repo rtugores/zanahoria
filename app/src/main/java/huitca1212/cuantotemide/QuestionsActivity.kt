@@ -3,15 +3,12 @@ package huitca1212.cuantotemide
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import huitca1212.cuantotemide.MainActivity.Companion.startActivity
 import huitca1212.cuantotemide.databinding.ActivityQuestionsBinding
 import java.util.Locale
 
-class QuestionsActivity : BaseActivity(), View.OnClickListener {
+class QuestionsActivity : BaseActivity() {
 
     private lateinit var binding: ActivityQuestionsBinding
     private var size = 0f
@@ -23,22 +20,15 @@ class QuestionsActivity : BaseActivity(), View.OnClickListener {
         binding = ActivityQuestionsBinding.bind(findViewById(R.id.questionsMainContainer))
         setSupportActionBar(binding.appTopBarLayout.appTopBar)
 
-        loadAds()
+        binding.homeButton.setOnClickListener { onHomeButtonClicked() }
+        binding.nextButton.setOnClickListener { onNextButtonClicked() }
 
-        binding.homeButton.setOnClickListener(this)
-        binding.nextButton.setOnClickListener(this)
+        loadAds()
     }
 
-    private fun loadAds(){
+    private fun loadAds() {
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
-    }
-
-    override fun onClick(view: View) {
-        when (view.id) {
-            R.id.homeButton -> onHomeButtonClicked()
-            R.id.nextButton -> onNextButtonClicked()
-        }
     }
 
     private fun onHomeButtonClicked() {
@@ -53,55 +43,55 @@ class QuestionsActivity : BaseActivity(), View.OnClickListener {
                 -0.5f,
                 0.4f,
                 0f,
-                "¿Cuánto mides?",
-                "Menos de 1,70 m",
-                "Entre 1,70 y 1,80 m",
-                "Más de 1,80 m"
+                getString(R.string.second_question_title),
+                getString(R.string.second_question_option_one),
+                getString(R.string.second_question_option_two),
+                getString(R.string.second_question_option_three)
             )
             1 -> updateScreen(
                 -0.4f,
                 0f,
                 0.4f,
-                "¿De qué color tienes la piel?",
-                "Blanca o casi blanca",
-                "Negra o casi negra",
-                "Entre blanca y negra"
+                getString(R.string.third_question_title),
+                getString(R.string.third_question_option_one),
+                getString(R.string.third_question_option_two),
+                getString(R.string.third_question_option_three)
             )
             2 -> updateScreen(
                 -0.1f,
                 2f,
                 0.6f,
-                "¿Qué relación tienes entre los dedos índice y anular?",
-                "Es más largo el índice",
-                "Es más largo el anular",
-                "Son igual de largos"
+                getString(R.string.fourth_question_title),
+                getString(R.string.fourth_question_option_one),
+                getString(R.string.fourth_question_option_two),
+                getString(R.string.fourth_question_option_three)
             )
             3 -> updateScreen(
                 -0.2f,
                 -0.2f,
                 0.4f,
-                "¿Comes habitualmente nueces o arándanos?",
-                "Sí",
-                "No",
-                "A veces"
+                getString(R.string.fifth_question_title),
+                getString(R.string.fifth_question_option_one),
+                getString(R.string.fifth_question_option_two),
+                getString(R.string.fifth_question_option_three)
             )
             4 -> updateScreen(
                 0.4f,
                 -0.3f,
                 0.1f,
-                "¿Eres fumador?",
-                "Sí",
-                "No",
-                "Sólo de vez en cuando"
+                getString(R.string.sixth_question_title),
+                getString(R.string.sixth_question_option_one),
+                getString(R.string.sixth_question_option_two),
+                getString(R.string.sixth_question_option_three)
             )
             5 -> updateScreen(
                 -0.5f,
                 0f,
                 -0.2f,
-                "¿Cuántas veces a la semana haces ejercicio?",
-                "Una vez o más",
-                "Sólo hago ejercicio cuando me apetece",
-                "No hago ejercicio"
+                getString(R.string.seventh_question_title),
+                getString(R.string.seventh_question_option_one),
+                getString(R.string.seventh_question_option_two),
+                getString(R.string.seventh_question_option_three)
             )
 
             6 -> {
@@ -109,10 +99,10 @@ class QuestionsActivity : BaseActivity(), View.OnClickListener {
                     0.5f,
                     0.1f,
                     -0.3f,
-                    "",
-                    "",
-                    "",
-                    ""
+                    EMPTY_TEXT,
+                    EMPTY_TEXT,
+                    EMPTY_TEXT,
+                    EMPTY_TEXT
                 )
                 SolutionActivity.startActivity(this@QuestionsActivity, size.toString())
                 finish()
@@ -175,13 +165,14 @@ class QuestionsActivity : BaseActivity(), View.OnClickListener {
     companion object {
 
         private const val COUNTRY_SELECTED_ARG = "CountrySelected"
+        private const val EMPTY_TEXT = ""
 
         fun startActivity(activity: Activity, countrySelected: String?) {
             val intent = Intent(activity, QuestionsActivity::class.java)
-            val bundle = Bundle().apply {
+            Bundle().run {
                 putString(COUNTRY_SELECTED_ARG, countrySelected)
+                intent.putExtras(this)
             }
-            intent.putExtras(bundle)
 
             activity.startActivity(intent)
         }

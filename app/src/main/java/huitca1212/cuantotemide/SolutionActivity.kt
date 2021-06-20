@@ -4,12 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.view.View
 import huitca1212.cuantotemide.MainActivity.Companion.startActivity
 import huitca1212.cuantotemide.databinding.ActivitySolutionBinding
-import java.util.Locale
 
-class SolutionActivity : BaseActivity(), View.OnClickListener {
+class SolutionActivity : BaseActivity() {
 
     private lateinit var binding: ActivitySolutionBinding
     private var sizeShare: Float? = null
@@ -20,9 +18,9 @@ class SolutionActivity : BaseActivity(), View.OnClickListener {
         binding = ActivitySolutionBinding.bind(findViewById(R.id.solutionMainContainer))
         setSupportActionBar(binding.appTopBarLayout.appTopBar)
 
-        binding.homeButton.setOnClickListener(this)
-        binding.shareButton.setOnClickListener(this)
-        sizeShare = intent.extras?.getString(FINAL_SIZE_ARG)?.toFloat()
+        binding.homeButton.setOnClickListener { onHomeButtonClicked() }
+        binding.shareButton.setOnClickListener { onShareButtonClicked() }
+        val sizeShare = intent.extras?.getString(FINAL_SIZE_ARG)?.toFloat()
         sizeShare?.let {
             binding.sizeText.text = String.format(getString(R.string.solution_size_text), it)
             if (it >= 13.79) {
@@ -36,30 +34,22 @@ class SolutionActivity : BaseActivity(), View.OnClickListener {
     private fun setSolutionParameters(solutionDrawableId: Int, solutionTextId: Int, solutionRawId: Int) {
         binding.finalPhoto.setImageResource(solutionDrawableId)
         binding.solutionText.setText(solutionTextId)
-        val mpRes: MediaPlayer = MediaPlayer.create(applicationContext, solutionRawId)
-        mpRes.start()
-    }
-
-    override fun onClick(v: View) {
-        val id = v.id
-        if (id == R.id.homeButton) {
-            onHomeButtonClicked()
-        } else if (id == R.id.share_button) {
-            onShareButtonClicked()
-        }
+        MediaPlayer
+            .create(applicationContext, solutionRawId)
+            .start()
     }
 
     private fun onHomeButtonClicked() {
-        startActivity(this@SolutionActivity)
+        startActivity(this)
         finish()
     }
 
     private fun onShareButtonClicked() {
         val intent = Intent(Intent.ACTION_SEND).apply {
-            type = "text/plain"
+            type = SHARE_TYPE
             addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
-            putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_subject))
-            putExtra(Intent.EXTRA_TEXT, String.format(Locale.getDefault(), getString(R.string.share_text), sizeShare))
+            putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_result_subject))
+            putExtra(Intent.EXTRA_TEXT, getString(R.string.share_result_text, sizeShare))
         }
 
         startActivity(Intent.createChooser(intent, getString(R.string.share_chooser)))
@@ -71,9 +61,10 @@ class SolutionActivity : BaseActivity(), View.OnClickListener {
 
         fun startActivity(activity: Activity, countrySelected: String?) {
             val intent = Intent(activity, SolutionActivity::class.java)
-            val b = Bundle()
-            b.putString(FINAL_SIZE_ARG, countrySelected)
-            intent.putExtras(b)
+            Bundle().run {
+                putString(FINAL_SIZE_ARG, countrySelected)
+                intent.putExtras(this)
+            }
             activity.startActivity(intent)
         }
     }

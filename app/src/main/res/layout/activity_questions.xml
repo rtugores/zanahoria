@@ -23,7 +23,7 @@
         android:gravity="center"
         android:layout_marginStart="@dimen/side_margin"
         android:layout_marginEnd="@dimen/side_margin"
-        android:text="@string/first_question"
+        android:text="@string/first_question_title"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -52,7 +52,7 @@
             android:textSize="@dimen/standard20sp"
             android:textColor="@color/white"
             android:padding="5dp"
-            android:text="@string/first_option" />
+            android:text="@string/first_question_option_one" />
 
         <RadioButton
             android:id="@+id/secondOption"
@@ -61,7 +61,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/standard20sp"
             android:padding="5dp"
-            android:text="@string/second_option" />
+            android:text="@string/first_question_option_two" />
 
         <RadioButton
             android:id="@+id/thirdOption"
@@ -70,7 +70,7 @@
             android:textSize="@dimen/standard20sp"
             android:textColor="@color/white"
             android:padding="5dp"
-            android:text="@string/third_option" />
+            android:text="@string/first_question_option_three" />
     </RadioGroup>
 
     <com.google.android.material.button.MaterialButton
