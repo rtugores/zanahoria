@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">¿Cuánto te mide?</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_info">Información</string>
+    <string name="welcome_headline">¿Cuánto te mide&#8230;</string>
+    <string name="welcome_subline">&#8230;la zanahoria?</string>
+    <string name="welcome_text"><![CDATA[<b>¡Bienvenido!</b><br><br>¿Estás preparado para averiguar el tamaño de tu zanahoria?<br><br>¡Selecciona país y que comience el test!]]></string>
+    <string name="welcome_chooser_error">¡Selecciona país!</string>
+    <string name="start">¡Comenzar!</string>
+
+    <string name="welcome_chooser_text">Selecciona país…</string>
+    <string name="welcome_country_andorra">Andorra</string>
+    <string name="welcome_country_argentina">Argentina</string>
+    <string name="welcome_country_belice">Belice</string>
+    <string name="welcome_country_bolivia">Bolivia</string>
+    <string name="welcome_country_brasil">Brasil</string>
+    <string name="welcome_country_canadá">Canadá</string>
+    <string name="welcome_country_chile">Chile</string>
+    <string name="welcome_country_colombia">Colombia</string>
+    <string name="welcome_country_costa_rica">Costa Rica</string>
+    <string name="welcome_country_cuba">Cuba</string>
+    <string name="welcome_country_ecuador">Ecuador</string>
+    <string name="welcome_country_el_salvador">El Salvador</string>
+    <string name="welcome_country_espanha">España</string>
+    <string name="welcome_country_estados_unidos">Estados Unidos</string>
+    <string name="welcome_country_francia">Francia</string>
+    <string name="welcome_country_guatemala">Guatemala</string>
+    <string name="welcome_country_guinea_ecuatorial">Guinea Ecuatorial</string>
+    <string name="welcome_country_haití">Haití</string>
+    <string name="welcome_country_honduras">Honduras</string>
+    <string name="welcome_country_marruecos">Marruecos</string>
+    <string name="welcome_country_méxico">México</string>
+    <string name="welcome_country_nicaragua">Nicaragua</string>
+    <string name="welcome_country_otro">OTRO</string>
+    <string name="welcome_country_panamá">Panamá</string>
+    <string name="welcome_country_paraguay">Paraguay</string>
+    <string name="welcome_country_perú">Perú</string>
+    <string name="welcome_country_puerto_rico">Puerto Rico</string>
+    <string name="welcome_country_republica_dominicana">República Dominicana</string>
+    <string name="welcome_country_trinidad_y_tobago">Trinidad y Tobago</string>
+    <string name="welcome_country_uruguay">Uruguay</string>
+    <string name="welcome_country_venezuela">Venezuela</string>
+
+    <string name="next">Siguiente ></string>
+    <string name="go_to_start">Inicio</string>
+
+    <string name="first_question_title">¿Cuántos años tienes?</string>
+    <string name="first_question_option_one">Menos de 18</string>
+    <string name="first_question_option_two">Entre 18 y 40</string>
+    <string name="first_question_option_three">Más de 40</string>
+
+    <string name="second_question_title">¿Cuánto mides?</string>
+    <string name="second_question_option_one">Menos de 1,70 m</string>
+    <string name="second_question_option_two">Entre 1,70 y 1,80 m</string>
+    <string name="second_question_option_three">Más de 1,80 m</string>
+
+    <string name="third_question_title">¿De qué color tienes la piel?</string>
+    <string name="third_question_option_one">Blanca o casi blanca</string>
+    <string name="third_question_option_two">Negra o casi negra</string>
+    <string name="third_question_option_three">Entre blanca y negra</string>
+
+    <string name="fourth_question_title">¿Qué relación tienes entre los dedos índice y anular?</string>
+    <string name="fourth_question_option_one">Es más largo el índice</string>
+    <string name="fourth_question_option_two">Es más largo el anular</string>
+    <string name="fourth_question_option_three">Son igual de largos</string>
+
+    <string name="fifth_question_title">¿Comes habitualmente nueces o arándanos?</string>
+    <string name="fifth_question_option_one">Sí</string>
+    <string name="fifth_question_option_two">No</string>
+    <string name="fifth_question_option_three">A veces</string>
+
+    <string name="sixth_question_title">¿Eres fumador?</string>
+    <string name="sixth_question_option_one">Sí</string>
+    <string name="sixth_question_option_two">No</string>
+    <string name="sixth_question_option_three">Sólo de vez en cuando</string>
+
+    <string name="seventh_question_title">¿Cuántas veces a la semana haces ejercicio?</string>
+    <string name="seventh_question_option_one">Una vez o más</string>
+    <string name="seventh_question_option_two">Sólo hago ejercicio cuando me apetece</string>
+    <string name="seventh_question_option_three">No hago ejercicio</string>
+
+
+    <string name="solution_size_text">"%.2f cm</string>
+    <string name="solution_smaller_text">La media de una zanahoria en el mundo es de 13,79 cm.\n\nLa tienes más pequeña, pero no te preocupes.\n\n¡No es importante!</string>
+    <string name="solution_bigger_text">La media de una zanahoria en el mundo es de 13,79 cm.\n\n¡La tienes más grande!\n\n¿Sabes ya si es más grande que la de tus amigos?</string>
+    <string name="share_result_subject">¡Mira cuánto me mide!</string>
+    <string name="share_result_text">La aplicación \"¿Cuánto te mide?\" dice que mi zanahoria mide %.2f cm. ¿A ti cuánto te da?: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
+    <string name="share_chooser">Compartir mediante</string>
+    <string name="share_subject">¡Descarga \"¿Cuánto te mide?\"!</string>
+    <string name="share_text">Descarga la aplicación que te servirá para saber si tu zanahoria es grande o pequeña. Disponible YA en Google Play: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
+    <string name="info_dialog_title">Información</string>
+    <string name="info_dialog_text">Aplicación desarrollada por RJ Apps. Para cualquier sugerencia, no dude en contactar.</string>
+    <string name="info_dialog_positive_button">Contactar</string>
+    <string name="info_dialog_negative_button">Cancelar</string>
+    <string name="info_dialog_chooser">Enviar mediante</string>
+
+    <string name="app_contact_email">huitca1212@gmail.com</string>
+
+</resources>

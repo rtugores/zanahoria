@@ -91,7 +91,7 @@ class MainActivity : BaseActivity() {
             getString(R.string.welcome_country_trinidad_y_tobago),
             getString(R.string.welcome_country_uruguay),
             getString(R.string.welcome_country_venezuela)
-        )
+        ).sorted()
     }
 
     companion object {
