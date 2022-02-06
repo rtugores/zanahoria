@@ -142,6 +142,7 @@ class QuestionsActivity : BaseActivity() {
                 countryCode == getString(R.string.welcome_country_espanha) ||
                 countryCode == getString(R.string.welcome_country_chile) ||
                 countryCode == getString(R.string.welcome_country_canada) ||
+                countryCode == getString(R.string.welcome_country_portugal) ||
                 countryCode == getString(R.string.welcome_country_belice)
             ) {
                 14.18f
@@ -152,7 +153,10 @@ class QuestionsActivity : BaseActivity() {
                 countryCode == getString(R.string.welcome_country_colombia) ||
                 countryCode == getString(R.string.welcome_country_venezuela) ||
                 countryCode == getString(R.string.welcome_country_ecuador) ||
-                countryCode == getString(R.string.welcome_country_guinea_ecuatorial)
+                countryCode == getString(R.string.welcome_country_guinea_ecuatorial) ||
+                countryCode == getString(R.string.welcome_country_cabo_verde) ||
+                countryCode == getString(R.string.welcome_country_angola) ||
+                countryCode == getString(R.string.welcome_country_mozambique)
             ) {
                 17.09f
             } else {
