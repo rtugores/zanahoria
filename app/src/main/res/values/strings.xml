@@ -67,7 +67,7 @@
 
     <string name="fifth_question_title">Do you regularly eat nuts or blueberries?</string>
     <string name="fifth_question_option_one">Yes, I do</string>
-    <string name="fifth_question_option_two">No, I don´t</string>
+    <string name="fifth_question_option_two">No, I don\'t</string>
     <string name="fifth_question_option_three">Just sometimes</string>
 
     <string name="sixth_question_title">Are you a smoker?</string>
@@ -78,11 +78,11 @@
     <string name="seventh_question_title">How many times a week do you exercise?</string>
     <string name="seventh_question_option_one">Once or more</string>
     <string name="seventh_question_option_two">I exercise only when I feel like</string>
-    <string name="seventh_question_option_three">I don´t exercise</string>
+    <string name="seventh_question_option_three">I don\'t exercise</string>
 
     <string name="solution_size_text">"%.2f cm</string>
-    <string name="solution_smaller_text">The average carrot in the world is 13.79 cm.\n\nYou have it smaller, but don't worry.\n\nIt´s not important!</string>
-    <string name="solution_bigger_text">The average carrot in the world is 13.79 cm.\n\nYou have it bigger!\n\nDo you already know if it´s bigger than your friends?</string>
+    <string name="solution_smaller_text">The average carrot in the world is 13.79 cm.\n\nYou have it smaller, but don\'t worry.\n\nIt\'s not important!</string>
+    <string name="solution_bigger_text">The average carrot in the world is 13.79 cm.\n\nYou have it bigger!\n\nDo you already know if it\'s bigger than your friends?</string>
     <string name="share_result_subject">Look how big my carrot is!</string>
     <string name="share_result_text">The \"How big is it?\" app says my carrot measures %.2f cm. How much does it give you?: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
     <string name="share_chooser">Share with</string>
