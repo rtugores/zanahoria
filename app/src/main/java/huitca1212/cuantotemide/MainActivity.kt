@@ -40,8 +40,9 @@ class MainActivity : BaseActivity() {
     }
 
     private fun onStartButtonClicked() {
+        val userName = binding.mainNameEditText.text.toString()
         countrySelected?.code?.let { countryCode ->
-            QuestionsActivity.startActivity(this, countryCode)
+            QuestionsActivity.startActivity(activity = this, countryCode =  countryCode, userName =  userName)
         } ?: Toast.makeText(this, getString(R.string.welcome_chooser_error), Toast.LENGTH_SHORT).show()
     }
 }
