@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quanto lhe mede?</string>
+    <string name="menu_share">Compartilhar</string>
+    <string name="menu_info">Informações</string>
+    <string name="welcome_headline">Quanto a sua cenoura…</string>
+    <string name="welcome_subline">…mede?</string>
+    <string name="welcome_text"><![CDATA[<b>Bem-vindo!</b><br><br>Você está pronto para descobrir o tamanho da sua cenoura?<br><br>Adicione seu nome, selecione seu país e comece o teste!]]></string>
+    <string name="welcome_chooser_error">Escolha seu país!</string>
+    <string name="start">Iniciar!</string>
+
+    <string name="welcome_chooser_text">Escolha seu país…</string>
+    <string name="welcome_add_name_text">Adicione seu nome…</string>
+
+    <string name="next">Próximo ></string>
+    <string name="go_to_start">Iniciar</string>
+
+    <string name="first_question_title">Quantos anos você tem?</string>
+    <string name="first_question_option_one">Menos de 18 anos</string>
+    <string name="first_question_option_two">Entre 18 e 40</string>
+    <string name="first_question_option_three">Mais de 40</string>
+
+    <string name="second_question_title">Qual é a sua altura?</string>
+    <string name="second_question_option_one">Menos de 1,70 m</string>
+    <string name="second_question_option_two">Entre 1,70 e 1,80 m</string>
+    <string name="second_question_option_three">Mais de 1,80 m</string>
+
+    <string name="third_question_title">Que cor de pele você tem?</string>
+    <string name="third_question_option_one">Clara ou quase clara</string>
+    <string name="third_question_option_two">Oscura ou quase oscura</string>
+    <string name="third_question_option_three">Entre oscura e clara</string>
+
+    <string name="fourth_question_title">Qual é a relação entre o dedo indicador e o anelar?</string>
+    <string name="fourth_question_option_one">O indicador é mais longo</string>
+    <string name="fourth_question_option_two">O anelar é mais longo</string>
+    <string name="fourth_question_option_three">Eles tem o mesmo tamanho</string>
+
+    <string name="fifth_question_title">Você costuma comer nozes ou mirtilos?</string>
+    <string name="fifth_question_option_one">Sim</string>
+    <string name="fifth_question_option_two">Não</string>
+    <string name="fifth_question_option_three">Às vezes</string>
+
+    <string name="sixth_question_title">Você é fumante?</string>
+    <string name="sixth_question_option_one">Sim</string>
+    <string name="sixth_question_option_two">Não</string>
+    <string name="sixth_question_option_three">De vez em quando</string>
+
+    <string name="seventh_question_title">Quantas vezes por semana você se exercita?</string>
+    <string name="seventh_question_option_one">Uma ou mais</string>
+    <string name="seventh_question_option_two">Só me exercito quando tenho vontade</string>
+    <string name="seventh_question_option_three">Eu não me exercito</string>
+
+
+    <string name="solution_size_text">"%.2f cm</string>
+    <string name="solution_smaller_text">A cenoura média mundial mede 13,79 cm.\n\nA sua cenoura é menor, mas não se preocupe.\n\nNão é importante!</string>
+    <string name="solution_bigger_text">A cenoura média mundial mede 13,79 cm.\n\nA sua cenoura é maior!\n\nVocê já sabe se ela é maior que a dos seus amigos?</string>
+    <string name="share_result_subject">Olha quanto me mede!</string>
+    <string name="share_result_text">O aplicativo \"Quanto lhe mede?\" diz que minha cenoura mede %.2f cm. Quanto mede a sua?: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
+    <string name="share_chooser">Compartilhar via</string>
+    <string name="share_subject">Baixe \"Quanto lhe mede?\"!</string>
+    <string name="share_text">Baixe o aplicativo que o ajudará a saber se sua cenoura é grande ou pequena. Disponível AGORA no Google Play: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
+    <string name="info_dialog_title">Informações</string>
+    <string name="info_dialog_text">Aplicativo desenvolvido por RJ Apps. Para qualquer sugestão, não hesite em contactar.</string>
+    <string name="info_dialog_positive_button">Contato</string>
+    <string name="info_dialog_negative_button">Cancelar</string>
+    <string name="info_dialog_chooser">Enviar por</string>
+
+    <string name="app_contact_email">huitca1212@gmail.com</string>
+
+</resources>

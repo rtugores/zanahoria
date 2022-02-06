@@ -3,44 +3,50 @@
     <string name="app_name">How big is it?</string>
     <string name="menu_share">Share</string>
     <string name="menu_info">Information</string>
-    <string name="welcome_headline">How big is&#8230;</string>
-    <string name="welcome_subline">&#8230;your carrot?</string>
-    <string name="welcome_text"><![CDATA[<b>Welcome!</b><br><br>Are you ready to guess the size of your carrot?<br><br>Select country and let the test begin!]]></string>
-    <string name="welcome_chooser_error">Select country!</string>
+    <string name="welcome_headline">How big…</string>
+    <string name="welcome_subline">…your carrot is?</string>
+    <string name="welcome_text"><![CDATA[<b>Welcome!</b><br><br>Are you ready to guess the size of your carrot?<br><br>Add your name, choose your country and let the test begin!]]></string>
+    <string name="welcome_chooser_error">Choose country!</string>
     <string name="start">Start!</string>
 
-    <string name="welcome_chooser_text">Select country…</string>
-    <string name="welcome_country_andorra">Andorra</string>
-    <string name="welcome_country_argentina">Argentina</string>
-    <string name="welcome_country_belice">Belize</string>
-    <string name="welcome_country_bolivia">Bolivia</string>
-    <string name="welcome_country_brasil">Brazil</string>
-    <string name="welcome_country_canadá">Canada</string>
-    <string name="welcome_country_chile">Chile</string>
-    <string name="welcome_country_colombia">Colombia</string>
-    <string name="welcome_country_costa_rica">Costa Rica</string>
-    <string name="welcome_country_cuba">Cuba</string>
-    <string name="welcome_country_ecuador">Ecuador</string>
-    <string name="welcome_country_el_salvador">El Salvador</string>
-    <string name="welcome_country_espanha">Spain</string>
-    <string name="welcome_country_estados_unidos">United States</string>
-    <string name="welcome_country_francia">France</string>
-    <string name="welcome_country_guatemala">Guatemala</string>
-    <string name="welcome_country_guinea_ecuatorial">Equatorial Guinea</string>
-    <string name="welcome_country_haití">Haiti</string>
-    <string name="welcome_country_honduras">Honduras</string>
-    <string name="welcome_country_marruecos">Morocco</string>
-    <string name="welcome_country_méxico">Mexico</string>
-    <string name="welcome_country_nicaragua">Nicaragua</string>
-    <string name="welcome_country_otro">OTHER</string>
-    <string name="welcome_country_panamá">Panama</string>
-    <string name="welcome_country_paraguay">Paraguay</string>
-    <string name="welcome_country_perú">Peru</string>
-    <string name="welcome_country_puerto_rico">Puerto Rico</string>
-    <string name="welcome_country_republica_dominicana">Dominican Republic</string>
-    <string name="welcome_country_trinidad_y_tobago">Trinidad and Tobago</string>
-    <string name="welcome_country_uruguay">Uruguay</string>
-    <string name="welcome_country_venezuela">Venezuela</string>
+    <string name="welcome_chooser_text">Choose country…</string>
+    <string name="welcome_add_name_text">Add your name…</string>
+
+    <string name="welcome_country_andorra" translatable="false">AD</string>
+    <string name="welcome_country_angola" translatable="false">AO</string>
+    <string name="welcome_country_argentina" translatable="false">AR</string>
+    <string name="welcome_country_belice" translatable="false">BZ</string>
+    <string name="welcome_country_bolivia" translatable="false">BO</string>
+    <string name="welcome_country_brasil" translatable="false">BR</string>
+    <string name="welcome_country_cabo_verde" translatable="false">CV</string>
+    <string name="welcome_country_canada" translatable="false">CA</string>
+    <string name="welcome_country_chile" translatable="false">CL</string>
+    <string name="welcome_country_colombia" translatable="false">CO</string>
+    <string name="welcome_country_costa_rica" translatable="false">CR</string>
+    <string name="welcome_country_cuba" translatable="false">CU</string>
+    <string name="welcome_country_ecuador" translatable="false">EC</string>
+    <string name="welcome_country_el_salvador" translatable="false">SV</string>
+    <string name="welcome_country_espanha" translatable="false">ES</string>
+    <string name="welcome_country_estados_unidos" translatable="false">US</string>
+    <string name="welcome_country_francia" translatable="false">FR</string>
+    <string name="welcome_country_guatemala" translatable="false">GT</string>
+    <string name="welcome_country_guinea_ecuatorial" translatable="false">GN</string>
+    <string name="welcome_country_haiti" translatable="false">HT</string>
+    <string name="welcome_country_honduras" translatable="false">HN</string>
+    <string name="welcome_country_marruecos" translatable="false">MA</string>
+    <string name="welcome_country_mexico" translatable="false">MX</string>
+    <string name="welcome_country_mozambique" translatable="false">MZ</string>
+    <string name="welcome_country_nicaragua" translatable="false">NI</string>
+    <string name="welcome_country_otro" translatable="false">OTHER</string>
+    <string name="welcome_country_panama" translatable="false">PA</string>
+    <string name="welcome_country_paraguay" translatable="false">PY</string>
+    <string name="welcome_country_peru" translatable="false">PE</string>
+    <string name="welcome_country_portugal" translatable="false">PT</string>
+    <string name="welcome_country_puerto_rico" translatable="false">PR</string>
+    <string name="welcome_country_republica_dominicana" translatable="false">DO</string>
+    <string name="welcome_country_trinidad_y_tobago" translatable="false">TT</string>
+    <string name="welcome_country_uruguay" translatable="false">UY</string>
+    <string name="welcome_country_venezuela" translatable="false">VE</string>
 
     <string name="next">Next ></string>
     <string name="go_to_start">Beginning</string>

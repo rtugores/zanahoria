@@ -4,9 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.gms.ads.AdRequest
-import huitca1212.cuantotemide.MainActivity.Companion.startActivity
 import huitca1212.cuantotemide.databinding.ActivityQuestionsBinding
-import java.util.Locale
 
 class QuestionsActivity : BaseActivity() {
 
@@ -18,7 +16,9 @@ class QuestionsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
         binding = ActivityQuestionsBinding.bind(findViewById(R.id.questionsMainContainer))
-        setSupportActionBar(binding.appTopBarLayout.appTopBar)
+        setSupportActionBar(binding.questionsAppTopBarLayout.appTopBar)
+
+        size = getInitSizeByCountry()
 
         binding.homeButton.setOnClickListener { onHomeButtonClicked() }
         binding.nextButton.setOnClickListener { onNextButtonClicked() }
@@ -32,12 +32,10 @@ class QuestionsActivity : BaseActivity() {
     }
 
     private fun onHomeButtonClicked() {
-        startActivity(this@QuestionsActivity)
         finish()
     }
 
     private fun onNextButtonClicked() {
-        size = checkSizeByCountry()
         when (currentStatus) {
             0 -> updateScreen(
                 -0.5f,
@@ -136,24 +134,25 @@ class QuestionsActivity : BaseActivity() {
         }
     }
 
-    private fun checkSizeByCountry(): Float {
+    private fun getInitSizeByCountry(): Float {
         val country = intent.extras?.getString(COUNTRY_SELECTED_ARG)
-        return country?.lowercase(Locale.getDefault())?.run {
-            if (contains("argentina") ||
-                contains("andorra") ||
-                contains("esp") ||
-                contains("chile") ||
-                contains("canad") ||
-                contains("belice")
+        return country?.let { countryCode ->
+            if (countryCode == getString(R.string.welcome_country_argentina) ||
+                countryCode == getString(R.string.welcome_country_andorra) ||
+                countryCode == getString(R.string.welcome_country_espanha) ||
+                countryCode == getString(R.string.welcome_country_chile) ||
+                countryCode == getString(R.string.welcome_country_canada) ||
+                countryCode == getString(R.string.welcome_country_belice)
             ) {
                 14.18f
-            } else if (contains("estados unidos")) {
+            } else if (countryCode == getString(R.string.welcome_country_estados_unidos)) {
                 12f
-            } else if (contains("bolivia") ||
-                contains("colombia") ||
-                contains("venezuela") ||
-                contains("ecuador") ||
-                contains("guinea ecuatorial")
+            } else if (countryCode == getString(R.string.welcome_country_bolivia) ||
+                countryCode == getString(R.string.welcome_country_brasil) ||
+                countryCode == getString(R.string.welcome_country_colombia) ||
+                countryCode == getString(R.string.welcome_country_venezuela) ||
+                countryCode == getString(R.string.welcome_country_ecuador) ||
+                countryCode == getString(R.string.welcome_country_guinea_ecuatorial)
             ) {
                 17.09f
             } else {
@@ -164,7 +163,7 @@ class QuestionsActivity : BaseActivity() {
 
     companion object {
 
-        private const val COUNTRY_SELECTED_ARG = "CountrySelected"
+        private const val COUNTRY_SELECTED_ARG = "COUNTRY_SELECTED_ARG"
         private const val EMPTY_TEXT = ""
 
         fun startActivity(activity: Activity, countrySelected: String?) {

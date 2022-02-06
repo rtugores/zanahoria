@@ -8,7 +8,7 @@
     android:background="@color/background_color">
 
     <include
-        android:id="@+id/appTopBarLayout"
+        android:id="@+id/solutionAppTopBarLayout"
         layout="@layout/default_top_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appTopBarLayout"
+        app:layout_constraintTop_toBottomOf="@id/solutionAppTopBarLayout"
         tools:text="13.41 cm" />
 
     <ImageView

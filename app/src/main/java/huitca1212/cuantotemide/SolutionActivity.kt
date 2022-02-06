@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
-import huitca1212.cuantotemide.MainActivity.Companion.startActivity
 import huitca1212.cuantotemide.databinding.ActivitySolutionBinding
 
 class SolutionActivity : BaseActivity() {
@@ -16,10 +15,11 @@ class SolutionActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solution)
         binding = ActivitySolutionBinding.bind(findViewById(R.id.solutionMainContainer))
-        setSupportActionBar(binding.appTopBarLayout.appTopBar)
+        setSupportActionBar(binding.solutionAppTopBarLayout.appTopBar)
 
         binding.homeButton.setOnClickListener { onHomeButtonClicked() }
         binding.shareButton.setOnClickListener { onShareButtonClicked() }
+
         val sizeShare = intent.extras?.getString(FINAL_SIZE_ARG)?.toFloat()
         sizeShare?.let {
             binding.sizeText.text = String.format(getString(R.string.solution_size_text), it)
@@ -40,7 +40,6 @@ class SolutionActivity : BaseActivity() {
     }
 
     private fun onHomeButtonClicked() {
-        startActivity(this)
         finish()
     }
 
@@ -57,7 +56,7 @@ class SolutionActivity : BaseActivity() {
 
     companion object {
 
-        private const val FINAL_SIZE_ARG = "FinalSizeArg"
+        private const val FINAL_SIZE_ARG = "FINAL_SIZE_ARG"
 
         fun startActivity(activity: Activity, countrySelected: String?) {
             val intent = Intent(activity, SolutionActivity::class.java)
