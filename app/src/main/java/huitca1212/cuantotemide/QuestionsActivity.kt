@@ -143,7 +143,7 @@ class QuestionsActivity : BaseActivity() {
                 contains("andorra") ||
                 contains("esp") ||
                 contains("chile") ||
-                contains("canadá") ||
+                contains("canad") ||
                 contains("belice")
             ) {
                 14.18f

@@ -16,7 +16,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val countries: List<String> by lazy { getCountriesList() }
-    private var countrySelected : String? = null
+    private var countrySelected: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +58,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun getCountriesList(): List<String> {
-        return listOf(
-            getString(R.string.welcome_chooser_text),
+        return listOf(getString(R.string.welcome_chooser_text)) + listOf(
             getString(R.string.welcome_country_andorra),
             getString(R.string.welcome_country_argentina),
             getString(R.string.welcome_country_belice),
