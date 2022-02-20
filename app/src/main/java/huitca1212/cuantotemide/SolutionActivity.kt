@@ -20,7 +20,7 @@ class SolutionActivity : BaseActivity() {
         binding.homeButton.setOnClickListener { onHomeButtonClicked() }
         binding.shareButton.setOnClickListener { onShareButtonClicked() }
 
-        val sizeShare = intent.extras?.getString(FINAL_SIZE_ARG)?.toFloat()
+        sizeShare = intent.extras?.getString(FINAL_SIZE_ARG)?.toFloat()
         sizeShare?.let {
             binding.sizeText.text = String.format(getString(R.string.solution_size_text), it)
             if (it >= 13.79) {
