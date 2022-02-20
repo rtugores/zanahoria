@@ -87,8 +87,8 @@
     <string name="seventh_question_option_three">I don\'t exercise</string>
 
     <string name="solution_size_text">"%.2f cm</string>
-    <string name="solution_smaller_text">The average carrot in the world is 13.79 cm.\n\nYou have it smaller, but don\'t worry.\n\nIt is not important!</string>
-    <string name="solution_bigger_text">The average carrot in the world is 13.79 cm.\n\nYou have it bigger!\n\nDo you already know if it is bigger than your friends\'?</string>
+    <string name="solution_smaller_text">The average carrot in the world is 13.58 cm.\n\nYou have it smaller, but don\'t worry.\n\nIt is not important!</string>
+    <string name="solution_bigger_text">The average carrot in the world is 13.58 cm.\n\nYou have it bigger!\n\nDo you already know if it is bigger than your friends\'?</string>
     <string name="share_result_subject">Look how big my carrot is!</string>
     <string name="share_result_text">The \"How big is it?\" app says my carrot measures %.2f cm. How much does it give you?: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
     <string name="share_chooser">Share with</string>

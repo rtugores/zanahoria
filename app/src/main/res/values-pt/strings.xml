@@ -52,8 +52,8 @@
 
 
     <string name="solution_size_text">"%.2f cm</string>
-    <string name="solution_smaller_text">A cenoura média mundial mede 13,79 cm.\n\nA sua cenoura é menor, mas não se preocupe.\n\nNão é importante!</string>
-    <string name="solution_bigger_text">A cenoura média mundial mede 13,79 cm.\n\nA sua cenoura é maior!\n\nVocê já sabe se ela é maior que a dos seus amigos?</string>
+    <string name="solution_smaller_text">A cenoura média mundial mede 13,58 cm.\n\nA sua cenoura é menor, mas não se preocupe.\n\nNão é importante!</string>
+    <string name="solution_bigger_text">A cenoura média mundial mede 13,58 cm.\n\nA sua cenoura é maior!\n\nVocê já sabe se ela é maior que a dos seus amigos?</string>
     <string name="share_result_subject">Olha quanto me mede!</string>
     <string name="share_result_text">O aplicativo \"Quanto lhe mede?\" diz que minha cenoura mede %.2f cm. Quanto mede a sua?: https://play.google.com/store/apps/details?id=huitca1212.cuantotemide</string>
     <string name="share_chooser">Compartilhar via</string>

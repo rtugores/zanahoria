@@ -49,6 +49,7 @@
                 <EditText
                     android:id="@+id/mainNameEditText"
                     android:layout_width="match_parent"
+                    android:maxLength="25"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/side_margin"
                     android:hint="@string/welcome_add_name_text"

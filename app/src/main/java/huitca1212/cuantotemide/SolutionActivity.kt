@@ -23,7 +23,7 @@ class SolutionActivity : BaseActivity() {
         sizeShare = intent.extras?.getString(FINAL_SIZE_ARG)?.toFloat()
         sizeShare?.let {
             binding.sizeText.text = String.format(getString(R.string.solution_size_text), it)
-            if (it >= 13.79) {
+            if (it >= 13.58) {
                 setSolutionParameters(R.drawable.solution_bigger, R.string.solution_bigger_text, R.raw.applause)
             } else {
                 setSolutionParameters(R.drawable.solution_smaller, R.string.solution_smaller_text, R.raw.boo)

@@ -18,10 +18,10 @@ class QuestionsActivity : BaseActivity() {
         binding = ActivityQuestionsBinding.bind(findViewById(R.id.questionsMainContainer))
         setSupportActionBar(binding.questionsAppTopBarLayout.appTopBar)
 
-        val countryCode = intent.extras?.getString(COUNTRY_CODE_ARG) ?: getString(R.string.welcome_country_otro)
+        val countrySize = intent.extras?.getFloat(COUNTRY_SIZE_ARG) ?: 0f
         val userName = intent.extras?.getString(USER_NAME_ARG).orEmpty()
 
-        size = getInitSize(countryCode, userName)
+        size = getInitSize(countrySize, userName)
 
         binding.homeButton.setOnClickListener { onHomeButtonClicked() }
         binding.nextButton.setOnClickListener { onNextButtonClicked() }
@@ -137,45 +137,21 @@ class QuestionsActivity : BaseActivity() {
         }
     }
 
-    private fun getInitSize(countryCode: String, userName: String): Float {
+    private fun getInitSize(countrySize: Float, userName: String): Float {
         val userNameAmount = userName.length / 100f
-        return userNameAmount + if (countryCode == getString(R.string.welcome_country_argentina) ||
-            countryCode == getString(R.string.welcome_country_andorra) ||
-            countryCode == getString(R.string.welcome_country_espanha) ||
-            countryCode == getString(R.string.welcome_country_chile) ||
-            countryCode == getString(R.string.welcome_country_canada) ||
-            countryCode == getString(R.string.welcome_country_portugal) ||
-            countryCode == getString(R.string.welcome_country_belice)
-        ) {
-            14.18f
-        } else if (countryCode == getString(R.string.welcome_country_estados_unidos)) {
-            12f
-        } else if (countryCode == getString(R.string.welcome_country_bolivia) ||
-            countryCode == getString(R.string.welcome_country_brasil) ||
-            countryCode == getString(R.string.welcome_country_colombia) ||
-            countryCode == getString(R.string.welcome_country_venezuela) ||
-            countryCode == getString(R.string.welcome_country_ecuador) ||
-            countryCode == getString(R.string.welcome_country_guinea_ecuatorial) ||
-            countryCode == getString(R.string.welcome_country_cabo_verde) ||
-            countryCode == getString(R.string.welcome_country_angola) ||
-            countryCode == getString(R.string.welcome_country_mozambique)
-        ) {
-            17.09f
-        } else {
-            15.49f
-        }
+        return userNameAmount + countrySize
     }
 
     companion object {
 
-        private const val COUNTRY_CODE_ARG = "COUNTRY_CODE_ARG"
+        private const val COUNTRY_SIZE_ARG = "COUNTRY_SIZE_ARG"
         private const val USER_NAME_ARG = "USER_NAME_ARG"
         private const val EMPTY_TEXT = ""
 
-        fun startActivity(activity: Activity, countryCode: String?, userName: String) {
+        fun startActivity(activity: Activity, countrySize: Float, userName: String) {
             val intent = Intent(activity, QuestionsActivity::class.java)
             Bundle().run {
-                putString(COUNTRY_CODE_ARG, countryCode)
+                putFloat(COUNTRY_SIZE_ARG, countrySize)
                 putString(USER_NAME_ARG, userName)
                 intent.putExtras(this)
             }
