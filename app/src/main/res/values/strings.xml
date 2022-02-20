@@ -3,8 +3,8 @@
     <string name="app_name">How big is it?</string>
     <string name="menu_share">Share</string>
     <string name="menu_info">Information</string>
-    <string name="welcome_headline">How big…</string>
-    <string name="welcome_subline">…your carrot is?</string>
+    <string name="welcome_headline">How big is…</string>
+    <string name="welcome_subline">…your carrot?</string>
     <string name="welcome_text"><![CDATA[<b>Welcome!</b><br><br>Are you ready to guess the size of your carrot?<br><br>Add your name, choose your country and let the test begin!]]></string>
     <string name="welcome_chooser_error">Choose country!</string>
     <string name="start">Start!</string>
