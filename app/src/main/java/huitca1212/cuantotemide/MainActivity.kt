@@ -21,7 +21,7 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.bind(findViewById(R.id.mainMainContainer))
         setSupportActionBar(binding.mainAppTopBarLayout.appTopBar)
 
-        binding.mainWelcomeTextView.text = htmlToPlainString(getString(R.string.welcome_text))
+        binding.mainWelcomeTextView.text = getString(R.string.welcome_text).fromHtml()
         binding.mainStartButton.setOnClickListener { onStartButtonClicked() }
         setCountrySpinner()
     }
