@@ -33,7 +33,7 @@
     <string name="fourth_question_title">Qual é a relação entre o dedo indicador e o anelar?</string>
     <string name="fourth_question_option_one">O indicador é mais longo</string>
     <string name="fourth_question_option_two">O anelar é mais longo</string>
-    <string name="fourth_question_option_three">Eles tem o mesmo tamanho</string>
+    <string name="fourth_question_option_three">Eles têm o mesmo tamanho</string>
 
     <string name="fifth_question_title">Você costuma comer nozes ou mirtilos?</string>
     <string name="fifth_question_option_one">Sim</string>
