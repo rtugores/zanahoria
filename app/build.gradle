@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 31
+    compileSdk 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "huitca1212.cuantotemide"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 9
         versionName "2.1.1"
     }
@@ -38,13 +38,7 @@ android {
             signingConfig signingConfigs.release
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
+    namespace 'huitca1212.cuantotemide'
 }
 
 dependencies {
