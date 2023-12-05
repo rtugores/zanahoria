@@ -2,18 +2,22 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 33
-    buildToolsVersion "30.0.3"
+    compileSdk 34
+    buildToolsVersion = "30.0.3"
 
     defaultConfig {
         applicationId "huitca1212.cuantotemide"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 9
         versionName "2.1.1"
     }
     buildFeatures {
         viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     signingConfigs {
         release {
