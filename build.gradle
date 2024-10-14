@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.3.0'
+        classpath 'com.android.tools.build:gradle:8.7.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -20,7 +20,7 @@ allprojects {
 }
 
 ext {
-    material = '1.11.0'
+    material = '1.12.0'
     constraint_layout = '2.1.4'
-    ads = '22.6.0'
+    ads = '23.4.0'
 }
