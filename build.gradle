@@ -1,13 +1,13 @@
 buildscript {
     ext {
-        kotlin_version = '1.9.20'
+        kotlin_version = '2.1.0'
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.7.0'
+        classpath 'com.android.tools.build:gradle:8.10.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -21,6 +21,6 @@ allprojects {
 
 ext {
     material = '1.12.0'
-    constraint_layout = '2.1.4'
-    ads = '23.4.0'
+    constraint_layout = '2.2.1'
+    ads = '24.3.0'
 }
