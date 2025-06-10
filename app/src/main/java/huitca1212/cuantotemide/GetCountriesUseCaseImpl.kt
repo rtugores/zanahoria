@@ -1,11 +1,17 @@
 package huitca1212.cuantotemide
 
 import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
+import huitca1212.cuantotemide.domain.model.Country
+import huitca1212.cuantotemide.domain.usecase.IGetCountriesUseCase
 import java.util.Locale
+import javax.inject.Inject
 
-internal class GetCountriesUseCase(private val context: Context) {
+internal class GetCountriesUseCaseImpl @Inject constructor(
+    @ApplicationContext private val context: Context
+) : IGetCountriesUseCase {
 
-    fun getCountriesWithDefault(): List<Country> {
+    override fun getCountriesWithDefault(): List<Country> {
         val default = Country(null, context.getString(R.string.welcome_chooser_text), size = 0f)
         return listOf(default) + getCountriesByName()
     }
