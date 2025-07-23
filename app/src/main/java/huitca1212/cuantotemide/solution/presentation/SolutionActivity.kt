@@ -1,9 +1,11 @@
-package huitca1212.cuantotemide
+package huitca1212.cuantotemide.solution.presentation
 
 import android.app.Activity
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
+import huitca1212.cuantotemide.BaseActivity
+import huitca1212.cuantotemide.R
 import huitca1212.cuantotemide.databinding.ActivitySolutionBinding
 
 class SolutionActivity : BaseActivity() {
@@ -24,14 +26,26 @@ class SolutionActivity : BaseActivity() {
         sizeShare?.let {
             binding.sizeText.text = String.format(getString(R.string.solution_size_text), it)
             if (it >= 13.58) {
-                setSolutionParameters(R.drawable.solution_bigger, R.string.solution_bigger_text, R.raw.applause)
+                setSolutionParameters(
+                    R.drawable.solution_bigger,
+                    R.string.solution_bigger_text,
+                    R.raw.applause
+                )
             } else {
-                setSolutionParameters(R.drawable.solution_smaller, R.string.solution_smaller_text, R.raw.boo)
+                setSolutionParameters(
+                    R.drawable.solution_smaller,
+                    R.string.solution_smaller_text,
+                    R.raw.boo
+                )
             }
         }
     }
 
-    private fun setSolutionParameters(solutionDrawableId: Int, solutionTextId: Int, solutionRawId: Int) {
+    private fun setSolutionParameters(
+        solutionDrawableId: Int,
+        solutionTextId: Int,
+        solutionRawId: Int
+    ) {
         binding.finalPhoto.setImageResource(solutionDrawableId)
         binding.solutionText.setText(solutionTextId)
         MediaPlayer
