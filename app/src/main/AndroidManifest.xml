@@ -18,20 +18,15 @@
             android:value="ca-app-pub-9645153779384738~1942691205" />
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".QuestionsActivity"
             android:exported="false"

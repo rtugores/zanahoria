@@ -4,7 +4,8 @@
     android:id="@+id/questionsMainContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color">
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true">
 
     <include
         android:id="@+id/questionsAppTopBarLayout"
@@ -19,9 +20,9 @@
         android:id="@+id/questionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:lineSpacingMultiplier="1.2"
-        android:gravity="center"
         android:layout_marginHorizontal="@dimen/side_margin"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.2"
         android:text="@string/first_question_title"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -47,28 +48,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:textSize="@dimen/standard20sp"
-            android:textColor="@color/white"
             android:padding="5dp"
-            android:text="@string/first_question_option_one" />
+            android:text="@string/first_question_option_one"
+            android:textColor="@color/white"
+            android:textSize="@dimen/standard20sp" />
 
         <RadioButton
             android:id="@+id/secondOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="@dimen/standard20sp"
             android:padding="5dp"
-            android:text="@string/first_question_option_two" />
+            android:text="@string/first_question_option_two"
+            android:textColor="@color/white"
+            android:textSize="@dimen/standard20sp" />
 
         <RadioButton
             android:id="@+id/thirdOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/standard20sp"
-            android:textColor="@color/white"
             android:padding="5dp"
-            android:text="@string/first_question_option_three" />
+            android:text="@string/first_question_option_three"
+            android:textColor="@color/white"
+            android:textSize="@dimen/standard20sp" />
     </RadioGroup>
 
     <com.google.android.material.button.MaterialButton

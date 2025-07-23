@@ -13,9 +13,9 @@ android {
     defaultConfig {
         applicationId = "huitca1212.cuantotemide"
         minSdk = 23
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 11
-        versionName = "2.2.1"
+        versionName = "2.2.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

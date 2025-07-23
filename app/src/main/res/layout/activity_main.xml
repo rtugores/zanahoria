@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <include
@@ -29,12 +30,12 @@
                 android:id="@+id/mainWelcomeTextView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginHorizontal="@dimen/side_margin"
                 android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/side_margin"
                 android:layout_weight="1"
                 android:gravity="center|center_vertical"
-                android:textColor="@color/white"
                 android:lineSpacingMultiplier="1.3"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 tools:text="@string/welcome_text" />
 
@@ -42,27 +43,27 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/side_margin"
                 android:layout_marginHorizontal="@dimen/side_margin"
+                android:layout_marginVertical="@dimen/side_margin"
                 android:background="@drawable/layout_corners_shape">
 
                 <EditText
                     android:id="@+id/mainNameEditText"
                     android:layout_width="match_parent"
-                    android:maxLength="25"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/side_margin"
+                    android:autofillHints="name"
                     android:hint="@string/welcome_add_name_text"
                     android:inputType="textPersonName"
-                    android:autofillHints="name" />
+                    android:maxLength="25" />
             </FrameLayout>
 
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/side_margin"
                 android:layout_marginHorizontal="@dimen/side_margin"
+                android:layout_marginVertical="@dimen/side_margin"
                 android:background="@drawable/layout_corners_shape">
 
                 <Spinner
@@ -76,8 +77,8 @@
                 android:id="@+id/mainStartButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/side_margin"
                 android:layout_marginHorizontal="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/side_margin"
                 android:text="@string/start"
                 app:cornerRadius="8dp" />
         </LinearLayout>
