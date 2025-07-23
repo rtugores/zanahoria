@@ -14,7 +14,7 @@ android {
         applicationId = "huitca1212.cuantotemide"
         minSdk = 23
         targetSdk = 35
-        versionCode = 11
+        versionCode = 12
         versionName = "2.2.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
