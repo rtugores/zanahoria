@@ -18,7 +18,6 @@ class QuestionsActivity : BaseActivity() {
 
     private lateinit var binding: ActivityQuestionsBinding
 
-    // Remove factory injection, use default ViewModel provider
     private val viewModel: QuestionsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

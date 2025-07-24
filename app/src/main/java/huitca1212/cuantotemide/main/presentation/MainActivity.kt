@@ -41,7 +41,6 @@ class MainActivity : BaseActivity() {
 
 
     private fun setupCountriesSpinner() {
-        // Initialize the adapter with an empty list first
         countriesAdapter = ArrayAdapter(
             this@MainActivity,
             android.R.layout.simple_spinner_dropdown_item,
@@ -67,7 +66,6 @@ class MainActivity : BaseActivity() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { uiState ->
-                    // Update spinner with new countries
                     val countryNames = uiState.countries.map { it.name }
                     countriesAdapter.clear()
                     countriesAdapter.addAll(countryNames)
