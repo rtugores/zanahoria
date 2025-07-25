@@ -66,6 +66,7 @@ internal class SolutionActivity : BaseActivity() {
         val currentUiState = viewModel.uiState.value
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = SHARE_TYPE
+            addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             putExtra(Intent.EXTRA_SUBJECT, currentUiState.shareSubject)
             putExtra(Intent.EXTRA_TEXT, currentUiState.shareText)
         }
