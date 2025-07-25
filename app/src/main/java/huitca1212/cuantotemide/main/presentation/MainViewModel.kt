@@ -2,8 +2,8 @@ package huitca1212.cuantotemide.main.presentation
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import huitca1212.cuantotemide.questions.domain.model.Country
-import huitca1212.cuantotemide.questions.domain.GetCountriesUseCase
+import huitca1212.cuantotemide.questions.data.GetCountriesUseCase
+import huitca1212.cuantotemide.questions.data.model.Country
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 internal data class MainUiState(
+    val userName: String = "",
     val countries: List<Country> = emptyList(),
     val selectedCountry: Country? = null,
 )
@@ -21,7 +22,6 @@ internal class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(MainUiState())
-
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()
 
     private var internalCountriesList: List<Country> = emptyList()
@@ -33,14 +33,15 @@ internal class MainViewModel @Inject constructor(
         }
     }
 
-    fun onCountrySelected(position: Int) {
-        val selected = if (position in internalCountriesList.indices) {
-            internalCountriesList[position]
-        } else {
-            null
-        }
+    fun onUserNameChanged(newUserName: String) {
         _uiState.update { currentState ->
-            currentState.copy(selectedCountry = selected)
+            currentState.copy(userName = newUserName)
+        }
+    }
+
+    fun onCountrySelected(country: Country?) {
+        _uiState.update { currentState ->
+            currentState.copy(selectedCountry = country)
         }
     }
 }

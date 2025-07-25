@@ -16,7 +16,7 @@ data class QuestionsUiState(
 )
 
 @HiltViewModel
-class QuestionsViewModel @Inject constructor(): ViewModel() {
+class QuestionsViewModel @Inject constructor() : ViewModel() {
 
     private val _uiState = MutableStateFlow(
         QuestionsUiState(

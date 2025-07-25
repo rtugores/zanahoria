@@ -58,7 +58,6 @@ internal class SolutionActivity : BaseActivity() {
         }
     }
 
-
     private fun onHomeButtonClicked() {
         finish()
     }
@@ -80,6 +79,7 @@ internal class SolutionActivity : BaseActivity() {
     }
 
     companion object {
+
         private const val SHARE_TYPE = "text/plain"
 
         fun startActivity(

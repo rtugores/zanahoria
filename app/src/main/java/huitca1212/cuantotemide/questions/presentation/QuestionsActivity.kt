@@ -71,6 +71,7 @@ class QuestionsActivity : BaseActivity() {
     }
 
     companion object {
+
         private const val COUNTRY_SIZE_ARG = "COUNTRY_SIZE_ARG"
         private const val USER_NAME_ARG = "USER_NAME_ARG"
 

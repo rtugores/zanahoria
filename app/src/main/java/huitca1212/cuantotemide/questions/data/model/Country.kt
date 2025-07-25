@@ -1,4 +1,4 @@
-package huitca1212.cuantotemide.questions.domain.model
+package huitca1212.cuantotemide.questions.data.model
 
 internal data class Country(
     val code: String?,

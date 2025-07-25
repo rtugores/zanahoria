@@ -1,9 +1,9 @@
-package huitca1212.cuantotemide.questions.domain
+package huitca1212.cuantotemide.questions.data
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import huitca1212.cuantotemide.R
-import huitca1212.cuantotemide.questions.domain.model.Country
+import huitca1212.cuantotemide.questions.data.model.Country
 import java.util.Locale
 import javax.inject.Inject
 
