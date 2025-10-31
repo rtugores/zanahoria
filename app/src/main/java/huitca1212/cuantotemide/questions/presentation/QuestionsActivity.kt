@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.gms.ads.AdRequest
 import dagger.hilt.android.AndroidEntryPoint
 import huitca1212.cuantotemide.BaseActivity
@@ -34,20 +36,22 @@ class QuestionsActivity : BaseActivity() {
         binding.nextButton.setOnClickListener { onNextButtonClicked() }
 
         lifecycleScope.launch {
-            viewModel.uiState.collect { state ->
-                val data = state.questionData
-                if (data.questionTextRes == 0) {
-                    SolutionActivity.Companion.startActivity(
-                        this@QuestionsActivity,
-                        state.size.toString()
-                    )
-                    finish()
-                } else {
-                    binding.questionTextView.setText(data.questionTextRes)
-                    binding.firstOption.setText(data.firstOptionTextRes)
-                    binding.secondOption.setText(data.secondOptionTextRes)
-                    binding.thirdOption.setText(data.thirdOptionTextRes)
-                    binding.firstOption.isChecked = true
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.uiState.collect { state ->
+                    val data = state.questionData
+                    if (data.questionTextRes == 0) {
+                        SolutionActivity.Companion.startActivity(
+                            this@QuestionsActivity,
+                            state.size.toString()
+                        )
+                        finish()
+                    } else {
+                        binding.questionTextView.setText(data.questionTextRes)
+                        binding.firstOption.setText(data.firstOptionTextRes)
+                        binding.secondOption.setText(data.secondOptionTextRes)
+                        binding.thirdOption.setText(data.thirdOptionTextRes)
+                        binding.firstOption.isChecked = true
+                    }
                 }
             }
         }

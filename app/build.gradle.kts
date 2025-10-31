@@ -76,13 +76,10 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.compose.activity)
     implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.compose.uiTooling)
     implementation(libs.androidx.compose.navigation)
     implementation(libs.androidx.lifecycle.runtimeCompose)
-
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
 
     implementation(libs.materialComponents)
 

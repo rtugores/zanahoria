@@ -24,24 +24,22 @@ internal class MainViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(MainUiState())
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()
 
-    private var internalCountriesList: List<Country> = emptyList()
-
     fun loadCountries() {
-        internalCountriesList = getCountriesUseCase.getCountriesWithDefault()
-        _uiState.update { currentState ->
-            currentState.copy(countries = internalCountriesList)
+        val internalCountriesList: List<Country> = getCountriesUseCase.getCountriesWithDefault()
+        _uiState.update {
+            it.copy(countries = internalCountriesList)
         }
     }
 
     fun onUserNameChanged(newUserName: String) {
-        _uiState.update { currentState ->
-            currentState.copy(userName = newUserName)
+        _uiState.update {
+            it.copy(userName = newUserName)
         }
     }
 
     fun onCountrySelected(country: Country?) {
-        _uiState.update { currentState ->
-            currentState.copy(selectedCountry = country)
+        _uiState.update {
+            it.copy(selectedCountry = country)
         }
     }
 }
