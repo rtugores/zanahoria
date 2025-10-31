@@ -20,12 +20,12 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuAnchorType
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -122,7 +122,7 @@ internal fun MainScreen(
                 color = Color.White,
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center,
-                lineHeight = 32.sp, // Approximate 1.3 line spacing multiplier for 20sp
+                lineHeight = 32.sp,
                 modifier = Modifier
                     .weight(1f)
                     .wrapContentHeight(Alignment.CenterVertically)
@@ -131,7 +131,7 @@ internal fun MainScreen(
 
             OutlinedTextField(
                 value = uiState.userName,
-                onValueChange = { onUserNameChanged(it.take(25)) }, // Enforce maxLength
+                onValueChange = { onUserNameChanged(it.take(25)) },
                 label = { Text(stringResource(id = R.string.welcome_add_name_text)) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(
@@ -144,16 +144,9 @@ internal fun MainScreen(
                     .padding(vertical = dimensionResource(id = R.dimen.side_margin))
                     .border(
                         width = 0.dp,
-                        color = Color.Transparent, // To remove default OutlinedTextField border if background handles it
+                        color = Color.Transparent,
                         shape = RoundedCornerShape(8.dp)
                     ),
-                //                colors = TextFieldDefaults.outlinedTextFieldColors(
-                //                    focusedBorderColor = Color.Transparent,
-                //                    unfocusedBorderColor = Color.Transparent,
-                //                    textColor = Color.Black, // Adjust as per your @drawable/layout_corners_shape
-                //                    cursorColor = MaterialTheme.colorScheme.primary,
-                //                    containerColor = Color.Transparent // Background is handled by modifier
-                //                )
             )
 
             CountryDropDown(
@@ -195,7 +188,7 @@ internal fun CountryDropDown(
     modifier: Modifier = Modifier
 ) {
     var expanded by remember { mutableStateOf(false) }
-    val shape = RoundedCornerShape(8.dp) // For consistency
+    val shape = RoundedCornerShape(8.dp)
 
     ExposedDropdownMenuBox(
         expanded = expanded,
@@ -204,27 +197,20 @@ internal fun CountryDropDown(
     ) {
         OutlinedTextField(
             value = selectedCountry?.name ?: stringResource(R.string.welcome_chooser_text),
-            onValueChange = {}, // Not directly editable
+            onValueChange = {},
             readOnly = true,
             label = { Text(stringResource(R.string.welcome_chooser_text)) }, // Add a label string
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
             modifier = Modifier
-                .menuAnchor(type = MenuAnchorType.PrimaryNotEditable, enabled = true)
+                .menuAnchor(type = ExposedDropdownMenuAnchorType.PrimaryNotEditable, enabled = true)
                 .fillMaxWidth()
                 .border(0.dp, Color.Transparent, shape),
-            //            colors = TextFieldDefaults.outlinedTextFieldColors(
-            //                focusedBorderColor = Color.Transparent,
-            //                unfocusedBorderColor = Color.Transparent,
-            //                textColor = if (selectedCountry != null) Color.Black else Color.Gray, // Adjust hint color
-            //                containerColor = Color.Transparent
-            //            ),
             shape = shape
         )
 
         ExposedDropdownMenu(
             expanded = expanded,
             onDismissRequest = { expanded = false },
-            //            modifier = Modifier.background(colorResource(id = R.color.dropdown_background_color)) // Define this color
         ) {
             countries.forEach { country ->
                 DropdownMenuItem(
