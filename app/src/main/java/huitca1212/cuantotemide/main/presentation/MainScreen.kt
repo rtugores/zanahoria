@@ -12,24 +12,17 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuAnchorType
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,13 +30,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -54,8 +45,9 @@ import androidx.compose.ui.unit.sp
 import androidx.core.text.HtmlCompat
 import huitca1212.cuantotemide.R
 import huitca1212.cuantotemide.questions.data.model.Country
+import huitca1212.cuantotemide.ui.theme.AppTheme
 import huitca1212.cuantotemide.utils.AppInfoDialog
-import huitca1212.cuantotemide.utils.shareApp
+import huitca1212.cuantotemide.utils.AppTopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -68,7 +60,6 @@ internal fun MainScreen(
     val scrollState = rememberScrollState()
     val context = LocalContext.current
     var showInfoDialog by remember { mutableStateOf(false) }
-    var showOverflowMenu by remember { mutableStateOf(false) }
 
     val welcomeTextParsed = remember(context) {
         HtmlCompat.fromHtml(context.getString(R.string.welcome_text), HtmlCompat.FROM_HTML_MODE_COMPACT)
@@ -76,34 +67,9 @@ internal fun MainScreen(
 
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(
-                modifier = Modifier.shadow(elevation = 4.dp),
-                title = {
-                    Text(
-                        text = stringResource(id = R.string.app_name),
-                        fontWeight = FontWeight.Bold,
-                    )
-                },
-                actions = {
-                    IconButton(onClick = { shareApp(context) }) {
-                        Icon(
-                            tint = Color.White,
-                            imageVector = Icons.Filled.Share,
-                            contentDescription = stringResource(R.string.share_chooser)
-                        )
-                    }
-                    IconButton(onClick = { showInfoDialog = true }) {
-                        Icon(
-                            tint = Color.White,
-                            imageVector = Icons.Filled.Info,
-                            contentDescription = stringResource(R.string.info_dialog_chooser)
-                        )
-                    }
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = colorResource(id = R.color.colorPrimary),
-                    titleContentColor = Color.White,
-                ),
+            AppTopBar(
+                containerColor = R.color.colorPrimary,
+                onInfoClicked = { showInfoDialog = true }
             )
         },
         containerColor = colorResource(id = R.color.background_color),
@@ -114,11 +80,11 @@ internal fun MainScreen(
                 .padding(paddingValues)
                 .imePadding()
                 .verticalScroll(scrollState)
-                .padding(horizontal = dimensionResource(id = R.dimen.side_margin)),
+                .padding(horizontal = AppTheme.dimens.sideMargin),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = welcomeTextParsed.toString(), // Use the parsed HTML
+                text = welcomeTextParsed.toString(),
                 color = Color.White,
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center,
@@ -141,7 +107,7 @@ internal fun MainScreen(
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = dimensionResource(id = R.dimen.side_margin))
+                    .padding(vertical = AppTheme.dimens.sideMargin)
                     .border(
                         width = 0.dp,
                         color = Color.Transparent,
@@ -155,22 +121,22 @@ internal fun MainScreen(
                 onCountrySelected = onCountrySelected,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = dimensionResource(id = R.dimen.side_margin))
+                    .padding(vertical = AppTheme.dimens.sideMargin)
             )
 
             Button(
                 onClick = onStartClicked,
                 shape = RoundedCornerShape(8.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(id = R.color.colorPrimary), // Define this color
+                    containerColor = colorResource(id = R.color.colorPrimary),
                     contentColor = Color.White,
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = dimensionResource(id = R.dimen.side_margin), top = 8.dp) // Adjust top padding
+                    .padding(bottom = AppTheme.dimens.sideMargin, top = 8.dp)
                     .height(50.dp)
             ) {
-                Text(text = stringResource(id = R.string.start).uppercase())
+                Text(text = stringResource(id = R.string.start))
             }
         }
         if (showInfoDialog) {
@@ -199,7 +165,7 @@ internal fun CountryDropDown(
             value = selectedCountry?.name ?: stringResource(R.string.welcome_chooser_text),
             onValueChange = {},
             readOnly = true,
-            label = { Text(stringResource(R.string.welcome_chooser_text)) }, // Add a label string
+            label = { Text(stringResource(R.string.welcome_chooser_text)) },
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
             modifier = Modifier
                 .menuAnchor(type = ExposedDropdownMenuAnchorType.PrimaryNotEditable, enabled = true)
@@ -228,7 +194,7 @@ internal fun CountryDropDown(
 @Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
-    MaterialTheme {
+    AppTheme {
         MainScreen(
             uiState = MainUiState(
                 countries = listOf(

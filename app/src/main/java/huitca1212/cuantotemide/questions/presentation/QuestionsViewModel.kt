@@ -61,6 +61,16 @@ class QuestionsViewModel @Inject constructor() : ViewModel() {
     private fun getQuestionData(questionIndex: Int): QuestionData {
         return when (questionIndex) {
             0 -> QuestionData(
+                -0.3f,
+                0f,
+                0.3f,
+                R.string.first_question_title,
+                R.string.first_question_option_one,
+                R.string.first_question_option_two,
+                R.string.first_question_option_three
+            )
+
+            1 -> QuestionData(
                 -0.5f,
                 0.4f,
                 0f,
@@ -70,7 +80,7 @@ class QuestionsViewModel @Inject constructor() : ViewModel() {
                 R.string.second_question_option_three
             )
 
-            1 -> QuestionData(
+            2 -> QuestionData(
                 -0.4f,
                 0f,
                 0.4f,
@@ -80,7 +90,7 @@ class QuestionsViewModel @Inject constructor() : ViewModel() {
                 R.string.third_question_option_three
             )
 
-            2 -> QuestionData(
+            3 -> QuestionData(
                 -0.1f,
                 2f,
                 0.6f,
@@ -90,7 +100,7 @@ class QuestionsViewModel @Inject constructor() : ViewModel() {
                 R.string.fourth_question_option_three
             )
 
-            3 -> QuestionData(
+            4 -> QuestionData(
                 -0.2f,
                 -0.2f,
                 0.4f,
@@ -100,7 +110,7 @@ class QuestionsViewModel @Inject constructor() : ViewModel() {
                 R.string.fifth_question_option_three
             )
 
-            4 -> QuestionData(
+            5 -> QuestionData(
                 0.4f,
                 -0.3f,
                 0.1f,
@@ -110,7 +120,7 @@ class QuestionsViewModel @Inject constructor() : ViewModel() {
                 R.string.sixth_question_option_three
             )
 
-            5 -> QuestionData(
+            6 -> QuestionData(
                 -0.5f,
                 0f,
                 -0.2f,

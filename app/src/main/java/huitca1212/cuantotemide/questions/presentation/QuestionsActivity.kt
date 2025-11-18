@@ -3,75 +3,49 @@ package huitca1212.cuantotemide.questions.presentation
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import com.google.android.gms.ads.AdRequest
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.getValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.AndroidEntryPoint
-import huitca1212.cuantotemide.BaseActivity
-import huitca1212.cuantotemide.R
-import huitca1212.cuantotemide.databinding.ActivityQuestionsBinding
 import huitca1212.cuantotemide.solution.presentation.SolutionActivity
-import kotlinx.coroutines.launch
+import huitca1212.cuantotemide.ui.theme.AppTheme
 
 @AndroidEntryPoint
-class QuestionsActivity : BaseActivity() {
-
-    private lateinit var binding: ActivityQuestionsBinding
+class QuestionsActivity : AppCompatActivity() {
 
     private val viewModel: QuestionsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_questions)
-        binding = ActivityQuestionsBinding.bind(findViewById(R.id.questionsMainContainer))
-        setSupportActionBar(binding.questionsAppTopBarLayout.appTopBar)
 
         val countrySize = intent.extras?.getFloat(COUNTRY_SIZE_ARG) ?: 0f
         val userName = intent.extras?.getString(USER_NAME_ARG).orEmpty()
         viewModel.initialize(countrySize, userName)
 
-        binding.homeButton.setOnClickListener { finish() }
-        binding.nextButton.setOnClickListener { onNextButtonClicked() }
+        setContent {
+            AppTheme {
+                val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uiState.collect { state ->
-                    val data = state.questionData
-                    if (data.questionTextRes == 0) {
-                        SolutionActivity.Companion.startActivity(
-                            this@QuestionsActivity,
-                            state.size.toString()
-                        )
-                        finish()
-                    } else {
-                        binding.questionTextView.setText(data.questionTextRes)
-                        binding.firstOption.setText(data.firstOptionTextRes)
-                        binding.secondOption.setText(data.secondOptionTextRes)
-                        binding.thirdOption.setText(data.thirdOptionTextRes)
-                        binding.firstOption.isChecked = true
-                    }
+                // Check if we should navigate to solution
+                if (uiState.questionData.questionTextRes == 0) {
+                    SolutionActivity.startActivity(
+                        this@QuestionsActivity,
+                        uiState.size.toString()
+                    )
+                    finish()
+                } else {
+                    QuestionsScreen(
+                        uiState = uiState,
+                        onNextClicked = { selectedOption ->
+                            viewModel.onNextButtonClicked(selectedOption)
+                        },
+                        onHomeClicked = { finish() }
+                    )
                 }
             }
         }
-
-        loadAds()
-    }
-
-    private fun loadAds() {
-        val adRequest = AdRequest.Builder().build()
-        binding.adView.loadAd(adRequest)
-    }
-
-    private fun onNextButtonClicked() {
-        val selectedOption = when {
-            binding.firstOption.isChecked -> 0
-            binding.secondOption.isChecked -> 1
-            binding.thirdOption.isChecked -> 2
-            else -> 0
-        }
-        viewModel.onNextButtonClicked(selectedOption)
     }
 
     companion object {

@@ -4,31 +4,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/background_color</item>
     </style>
 
-    <style name="TextDarkGrey12">
-        <item name="android:textSize">@dimen/standard12sp</item>
-        <item name="android:textColor">@color/darkGrey</item>
-    </style>
-
-    <style name="TextDarkGrey14">
-        <item name="android:textSize">@dimen/standard14sp</item>
-        <item name="android:textColor">@color/darkGrey</item>
-    </style>
-
-    <style name="TextDarkGrey16">
-        <item name="android:textSize">@dimen/standard16sp</item>
-        <item name="android:textColor">@color/darkGrey</item>
-    </style>
-
-    <style name="TextDarkGrey20">
-        <item name="android:textSize">@dimen/standard20sp</item>
-        <item name="android:textColor">@color/darkGrey</item>
-    </style>
-
-    <style name="TextDarkGrey50">
-        <item name="android:textSize">@dimen/standard50sp</item>
-        <item name="android:textColor">@color/darkGrey</item>
-    </style>
 </resources>

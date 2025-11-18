@@ -19,9 +19,15 @@ internal class GetCountriesUseCaseImpl @Inject constructor(
     private fun getCountriesByName(): List<Country> {
         return countryCodesRes.map { countryCodeResAndSize ->
             val countryCode = context.getString(countryCodeResAndSize.first)
+            val displayName = try {
+                Locale.Builder().setRegion(countryCode).build().displayCountry
+            } catch (_: Exception) {
+                // For invalid country codes (like "OTHER"), use the code as display name
+                countryCode
+            }
             Country(
                 code = countryCode,
-                name = Locale("", countryCode).displayCountry,
+                name = displayName,
                 size = countryCodeResAndSize.second
             )
         }
