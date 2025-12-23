@@ -32,7 +32,7 @@ class QuestionsActivity : AppCompatActivity() {
                 if (uiState.questionData.questionTextRes == 0) {
                     SolutionActivity.startActivity(
                         this@QuestionsActivity,
-                        uiState.size.toString()
+                        uiState.size,
                     )
                     finish()
                 } else {

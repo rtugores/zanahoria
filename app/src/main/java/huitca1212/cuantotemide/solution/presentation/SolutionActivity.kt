@@ -49,7 +49,7 @@ internal class SolutionActivity : AppCompatActivity() {
 
         fun startActivity(
             activity: Activity,
-            finalSize: String?
+            finalSize: Float
         ) {
             val intent = Intent(activity, SolutionActivity::class.java)
             intent.putExtra(FINAL_SIZE_ARG, finalSize)

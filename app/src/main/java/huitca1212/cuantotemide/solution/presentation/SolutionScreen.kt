@@ -142,7 +142,7 @@ internal fun SolutionScreenContent(
 
 @Preview(showBackground = true)
 @Composable
-fun SolutionScreenPreview() {
+private fun SolutionScreenPreview() {
     AppTheme {
         SolutionScreenContent(
             uiState = SolutionUiState(

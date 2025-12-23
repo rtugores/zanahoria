@@ -23,18 +23,10 @@ internal class SolutionViewModel @Inject constructor(
     val uiState: StateFlow<SolutionUiState> = _uiState.asStateFlow()
 
     init {
-        val sizeString = savedStateHandle.get<String>(FINAL_SIZE_ARG).orEmpty()
-        val size = sizeString.toFloatOrNull()
+        val size = savedStateHandle.get<Float>(FINAL_SIZE_ARG)
 
-        if (size != null) {
-            processSolutionForSize(size)
-        } else {
-            _uiState.update {
-                it.copy(
-                    displayText = "Error: Size not available.",
-                )
-            }
-        }
+        size?.let(::processSolutionForSize)
+            ?: _uiState.update { it.copy(displayText = "Error: Size not available.") }
     }
 
     private fun processSolutionForSize(size: Float) {
